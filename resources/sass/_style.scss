@@ -1,0 +1,541 @@
+// style general start
+body{
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #101010;
+    //scroll-behavior: smooth;
+    line-height: 1.35em;
+}
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.font-primary{
+    font-family: $font-family-primary;
+}
+.font-secondary{
+    font-family: $font-family-sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: $font-family-primary;
+}
+/* h2{
+    font-size: 22px;
+} */
+.bg-gradient-primary {
+    background: linear-gradient($primary-dark, $primary);
+}
+.w-80{
+    width: 80%;
+}
+.w-90{
+    width: 90%;
+}
+img{
+    width: 100%;
+}
+.text-shadow{
+    text-shadow: 1px 1px 2px #000;
+}
+.cont-shadow{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.slick-prev{
+    left: 0 !important;
+    z-index: 2;
+}
+.slick-next{
+    right: 15px !important;
+}
+body .slick-prev:before, body .slick-next:before{
+    color: $primary !important;
+    font-size: 35px;
+}
+.slick-dots li.slick-active button:before{
+    color: $primary !important;
+}
+.back-top {
+    position: fixed;
+    bottom: .5rem;
+    right: 1rem;
+    font-size: 2.75rem;
+    color: $success;
+    text-decoration: none;
+    z-index: 1030;
+    line-height: 0;
+    display: none;
+    transition: all .5s ease;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: $secondary;
+        opacity: .85;
+
+    }
+}
+
+section[id] {
+    scroll-margin-top: 220px;
+}
+
+//menu navbar al dar scroll
+.menufixed {
+    //position: fixed;
+    position: sticky;
+    z-index: 1000;
+   top: 0;
+   width: 100%;
+    left: 0;
+   background-color: $primary;
+   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+
+    .navbar-brand {
+        img {
+           max-height: 40px;
+       }
+    }
+
+}
+
+@keyframes ripple {
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.waves{
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+    .waves .particle{
+        transform: scale(0);
+        background: rgba(211, 211, 211, 0.4);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        position: absolute;
+        opacity: 1;
+        pointer-events: none;
+    }
+
+.animation{
+    animation: ripple .5s linear;
+}
+// style general end
+
+
+//navbar start
+.navbar{
+    z-index: 99;
+    font-family: $font-family-primary;
+}
+
+@media (max-width: 980px){
+    .navbar-collapse{
+        justify-content: center !important;
+        display: flex;
+    }
+}
+//navbar end
+
+
+// baner header start
+.slider_home{
+    height: calc(100vh - 63px)!important;
+    background-image: url(../images/bg-home.jpg);
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    display: flex;
+    position: relative;
+    
+    &::before{
+        content: "";
+        //top:4px;
+        background-color: rgba(0,0,0,.6);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        z-index: 1;
+    }
+    .content_banner__home{
+        //align-self: center;
+        z-index: 2;        
+        display: flex;
+        justify-content: center;
+
+        .text-info_banner{
+            align-self: center;
+            text-shadow: 1px 1px 2px #000;
+            word-wrap: break-word;
+        }
+        .cont-form{
+            transform: translateY(-5%);
+
+            .form-banner{
+                background-color: #fff;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                position: relative;
+                z-index: 0;
+                //width: 320px !important;
+                .form-control{
+                    box-sizing: border-box;
+                    border: initial;
+                    margin: initial;
+                    padding: 0.375rem 0.75rem ;
+                    background-color: #F4F8F7;
+                    border-color: #F4F8F7;
+                    font-size: 15px !important;
+                    height:calc(1.6em + 0.75rem + 2px);
+                    &:focus{
+                        box-shadow: 0 0 0 0.2rem rgb(90 216 54 / 32%);
+                    }
+                    color: black;
+                    //padding: 0.375rem 0.2rem;
+                    border-radius: 0.25rem;
+                }
+            }
+
+            .terms-conditions{
+                font-size: 12px;
+            }
+
+            .btn-send_banner{
+                font-family: $font-family-primary;
+                border-radius: 50px;
+                border: none;
+                border: none;
+                min-height: 40px;
+                position: absolute;
+                top: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 0.65rem 4.3rem;
+                font-size: 16px;
+            }
+            
+            .custom-control-input:checked ~ .custom-control-label::before,
+            .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+                border-color: $white;
+                background-color: $success;
+                border-color: $success;
+            }
+            .custom-control-input:focus:not(:checked) ~ .custom-control-label::before{
+                border-color: $success;
+            }
+            .custom-control-input:focus ~ .custom-control-label::before{
+                box-shadow: 0 0 0 0.2rem rgb(0 140 66 / 20%);
+            }
+        }
+    }    
+}
+// baner header end
+
+
+// quienes somos start
+.section_quienessomos{
+    .info_nosotros{
+        background-color: $gray;
+        color: white;
+    }
+    .long-text{
+        font-size: 20px;
+        font-family: $font-family-primary;
+        display: flex;
+        line-height: 1;
+    }
+}
+// quienes somos end
+
+
+// cursos start
+.section_cursos{
+    .cont-img_cursos{
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        min-width: auto;
+        max-width: 310px;
+        max-height: 220px;
+        margin: 0 auto 20px;
+        width: 100%;
+        background: #000;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 40%), 0 2px 4px -1px rgb(0 0 0 / 50%);
+        img{
+            opacity: .5;
+            transition: all .3s ease-in-out;
+        }
+        &:hover{
+            img{
+                opacity: .25;
+                transform: scale(1.1);
+            }
+        }
+        a{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+        }
+        .info-curso{
+            bottom: 0px !important;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            h2{
+                font-size: 1.2em;
+                padding: 15px;
+            }
+        }
+    }
+
+}
+// cursos end
+
+
+// porque elegirnos start
+.section_porqueelegirnos{
+    .cont-degrade{
+        background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
+        border-radius: 10px 10px 10px 10px;
+        overflow: hidden;
+    }
+    .cont-icons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .icon-img{
+            width: 65px;
+        }
+    }
+}
+// porque elegirnos end
+
+
+//testimonios start
+.section_testimonios{
+    .cont-profile{
+        .name-profile{
+            align-self: center;
+        }
+    }
+}
+//testimonios end
+
+
+//cliente start
+.section_clientes{
+    .cont-imgs{
+        display: flex;
+        justify-content: center;
+    }
+}
+//cliente end
+
+
+// footer start
+.footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    color: $white;
+    background: linear-gradient(to right, #314589, #5e9dd6);
+
+    .info-footer {
+        font-size: 1.55rem;
+    }
+}
+// footer end
+
+//movil:
+@media (min-width: 576px){
+
+}
+
+// solo ipda:
+@media only screen and (min-width: 768px) and (max-width: 980px){
+    h2{
+        font-size: 35px;
+    }
+    p{
+        font-size: 16px;
+    }       
+
+    .slider_home{
+        .text-info_banner {
+            h3{font-size: 40px;}
+            h5{font-size: 30px;}
+        }
+        .title-form-banner{
+            font-size: 16px;
+        }
+        .cont-form{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+        .btn-send_banner{
+            padding: 0.65rem 2.5rem !important;
+        }
+    }
+
+    
+    .section_quienessomos{
+        .cont-fils{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+            justify-content: center;
+            margin: 0;
+        }
+        .long-text{
+            font-size: 30px !important;
+        }
+        .cont-img{
+            display: flex;
+            justify-content: center;
+            img{
+                width: 60%;
+            }
+        }
+    }
+    
+    .section_cursos{
+        .cont-fils{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+            justify-content: space-evenly;
+        }
+        .cont-img_cursos{
+            .info-curso h2{
+                font-size: 1em;
+            }
+        }  
+    }
+
+    .section_porqueelegirnos{
+        .cont-fils{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+            justify-content: center;
+            margin: 0;
+            .cont-icons{
+                text-align: center;
+            }
+        }       
+        
+    }
+
+    
+}
+
+//ipad pro  and desktop
+@media only screen and (min-width: 980px){
+    h1{
+        font-size: 40px;
+    }
+    h2{
+        font-size: 35px;
+    }
+    h3{
+        font-size: 28px;
+    }
+    p{
+        font-size: 18px;
+    }
+    section[id] {
+        scroll-margin-top: 55px;
+    }
+    
+    .slider_home{
+        .content_banner__home{
+            align-self: center;
+            .title-form-banner{
+                font-size: 20px;
+            }
+            .text-info_banner{
+                h3{
+                    font-size: 40px;
+                }
+                h5{
+                    font-size: 20px;
+                }
+            }
+            .cont-form{
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -15px;
+                margin-left: -15px;
+            }
+        }  
+    }    
+
+    .cont-fils{
+        display: flex;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .section_quienessomos{
+        .long-text{
+            font-size: 28px !important;
+        }
+        .cont-info{
+            align-self: center;
+        }       
+    }
+
+    .section_cursos{
+        .cont-fils{
+            justify-content: space-evenly;
+        }
+        .cont-img_cursos{
+            max-width: 95%;
+            .info-curso h2{
+                font-size: 1.5em;
+            }
+        }  
+    }
+
+    .section_porqueelegirnos{
+            .icon-img{
+                width: 80px;
+            }
+    }
+
+    /* .section_clientes{
+        .cont-imgs{
+            .img_clientes{
+                width: 12.5%;
+            }
+        }
+    } */
+
+    
+}
+
+
+
