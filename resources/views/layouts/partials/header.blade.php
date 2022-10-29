@@ -4,7 +4,7 @@
     <!-- Navbar brand -->
     <a class="navbar-brand me-2" href="{{route(Request::route()->getName())}}">
       <img src="{{asset('images/logo-ligth.png')}}"
-        height="40" alt="logo" loading="lazy" style="margin-top: -1px;"/>
+        height="50" alt="logo" loading="lazy" style="margin-top: -1px;"/>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -13,14 +13,14 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link text-white" href="{{route(Request::route()->getName())}}">Inicio</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="#quienessomos">Quiénes somos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#cursos">Cursos</a>
+                <a class="nav-link text-white" href="#programas">Programas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="#porqueelegirnos">¿Por qué elegirnos?</a>

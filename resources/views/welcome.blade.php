@@ -3,11 +3,11 @@
 @section('content')
 
 {{-- baner header start --}}
-<section id="home" class="bg-secondary slider_home mb-3">
+<section id="home" class="bg-secondary slider_home">
     <div class="container-fluid col-11 content_banner__home">
         <div class="row">
             <div class="col-12 col-md-7 col-lg-7 text-white text-info_banner">
-                <h3>¡DA EL SIGUIENTE PASO Y DIFERÉNCIATE MÁS!</h3>
+                <h3>CERTIFÍCATE CON LIDERES INTERNACIONALES EN CAPACITACIÓN MINERA</h3>
                 <!-- <p>El mercado laboral le solicita que se 
                     encuentre altamente capacitado con las 
                     últimas tecnologías de la información. 
@@ -75,14 +75,18 @@
                                 </div>
 
                                 <div class="form-group col-12">
-                                    <input type="text" class="form-control @error('celular') is-invalid @enderror"
-                                        name="celular" id="celular" value="{{ old('celular') }}" placeholder="Celular*"
-                                        maxlength="9">
-                                    @error('celular')
+                                    <input type="text" class="form-control pl-7 @error('celular') is-invalid @enderror"
+                                        name="celular" id="celular" value="{{ old('celular') }}" placeholder="Celular*">
+                                    <span class="invalid-feedback" id="celularError" role="alert"></span>
+                                        @error('celular')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
+
+                                    <!-- <input type="tel" id="celular" placeholder="">
+                                    <span id="valid-msg" class="hide">✓ Valid</span>
+                                        <span id="error-msg" class="hide"></span> -->
                                 </div>                                
 
                                 <div class="form-group col-12">
@@ -147,17 +151,22 @@
 
 
 {{-- Quienes Somos start --}}
-<section id="quienessomos" class="section_quienessomos mb-3 py-4">
-    <div class="container text-center py-4">
-        <h2 class="text-primary">Quiénes somos</h2>
+<section id="quienessomos" class="section_quienessomos bg-primary mb-3 py-4">
+    <div class="container text-center pt-4 d-none d-md-block d-lg-none">
+        <h2 class="text-white line-white"><span class="font-secondary">Quiénes</span> somos</h2>
     </div> 
-    <div class="container-fluid bg-primary  p-4">
+    <div class="container-fluid p-4 mt-3">
         <div class="col cont-fils">
-            <div class="col-12 col-md-6 col-lg-4 cont-img">
+            <div class="col-12 col-md-6 col-lg-4 cont-img d-none d-md-block img-colum">
                 <img src="{{asset('images/quienes_somos.png')}}" alt="Quienes Somos" class="img p-3">
             </div>
-            <div class="col-12 col-md-6 col-lg-7 cont-info">
-                <!-- <span class="text-secondary text-shadow">NOSOTROS</span> -->                
+            <div class="col-12 col-md-12 col-lg-7 cont-info ">
+                <div class="container text-center pb-4 d-md-none d-lg-block">
+                    <h2 class="text-white line-white"><span class="font-secondary">Quiénes</span> somos</h2>
+                </div> 
+                <div class="col-12 col-md-6 col-lg-4 cont-img d-block d-md-none">
+                    <img src="{{asset('images/quienes_somos.png')}}" alt="Quienes Somos" class="img p-3">
+                </div>              
                 <span class="text-white my-3 long-text">
                 Somos especialistas en la formación de profesionales en Minería.
                 </span>
@@ -165,6 +174,40 @@
                     <p>
                     Nuestro objetivo es garantizar un servicio de capacitación con conocimientos sólidos y acorde a las necesidades del mercado. 
                     </p>
+
+                    <div class="col-12 cont-fils text-center my-4">
+                        <div class="col-5 col-md-2 img-icons mb-3 mb-md-0">
+                            <img src="{{asset('images/icon_convenio_inter.png')}}" alt="logo quienes somos" class="img">
+                        </div>
+                        <div class="col-12 col-md-10 col-lg-10 align-self-center">
+                            <p class="m-0">
+                                <span class="font-primary">CERTIFICACIÓN INTERNACIONAL.</span>
+                                Recibirás el Diploma, certificado de estudios y constancia de notas emitidos por Mining Alati.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 cont-fils text-center my-4">
+                        <div class="col-5 col-md-2 img-icons mb-3 mb-md-0">
+                            <img src="{{asset('images/icon_100k.png')}}" alt="logo quienes somos" class="img">
+                        </div>
+                        <div class="col-12 col-md-10 col-lg-10 align-self-center">
+                            <p class="m-0">
+                                <span class="font-primary">ACCESO CONTINUO Y MULTIDISPOSITIVO.</span>
+                                Podrás acceder las 24 horas del día al Campus Virtual, desde cualquier móvil, pc, tablet, etc.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 cont-fils text-center my-4">
+                        <div class="col-5 col-md-2 img-icons mb-3 mb-md-0">
+                            <img src="{{asset('images/icon_9anios.png')}}" alt="logo quienes somos" class="img">
+                        </div>
+                        <div class="col-12 col-md-10 col-lg-10 align-self-center">
+                            <p class="m-0">
+                                <span class="font-primary">ASESORÍA ACADÉMICA.</span>
+                                Acompañamiento constante para que inicies, desarrolles y culmines tu programa satisfactoriamente.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -174,9 +217,9 @@
 
 
 {{-- Cursos start --}}
-<section id="cursos" class="section_cursos mb-3 py-4">
+<section id="programas" class="section_cursos mb-3 py-4">
     <div class="container text-center py-4">
-        <h2 class="text-primary">Nuestros cursos especializados</h2>
+        <h2 class="text-primary line-primary"><span class="font-secondary">Nuestros cursos</span> especializados</h2>
     </div>
     <div class="container-fluid p-4 ">
         <div class="col-12 cont-fils">
@@ -260,25 +303,32 @@
 {{-- Porque elegirnos start --}}
 <section id="porqueelegirnos" class="section_porqueelegirnos bg-primary mb-3 py-4">
     <div class="container text-center py-4">
-        <h2 class="text-white">¿Por qué elegirnos?</h2>
+        <h2 class="text-white line-white"><span class="font-secondary">¿Por qué</span> elegirnos?</h2>
     </div>
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-4 px-md-5">
         <div class="col-12 cont-fils cont-degrade">
-            <div class="col-12 col-md-6 cont-icons py-3">
+            <div class="col-12 col-md-6 col-lg-6 cont-icons py-3">
                 <div class="icon-img pb-3">
                     <img src="{{asset('images/icon_100k.png')}}" alt="+100k estudiantes de todo el mundo" class="img">
                 </div>                    
-                <h3 class="text-white text-center">+100k estudiantes de todo el mundo</h3>
+                <h3 class="text-white text-center">+7200 Alumnos certificados laborando</h3>
                 <p class="text-white text-center">Respaldan nuestro compromiso por la educación</p>
             </div>
-            <div class="col-12 col-md-6 cont-icons py-3">
+            <div class="col-12 col-md-6 col-lg-6 cont-icons py-3">
+                <div class="icon-img pb-3">
+                    <img src="{{asset('images/icon_9anios.png')}}" alt="+100k estudiantes de todo el mundo" class="img">
+                </div>                    
+                <h3 class="text-white text-center">+2000 empresas mineras</h3>
+                <p class="text-white text-center">Confían en nosotros</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-6 cont-icons py-3">
                 <div class="icon-img pb-3">
                     <img src="{{asset('images/icon_9anios.png')}}" alt="+100k estudiantes de todo el mundo" class="img">
                 </div>                    
                 <h3 class="text-white text-center">+9 años de experiencia y calidad</h3>
                 <p class="text-white text-center">Brindando excelencia en nuestros servicios</p>
             </div>
-            <div class="col-12 cont-icons py-3">
+            <div class="col-12 col-md-6 col-lg-6 cont-icons py-3">
                 <div class="icon-img pb-3">
                     <img src="{{asset('images/icon_convenio_inter.png')}}" alt="+100k estudiantes de todo el mundo" class="img">
                 </div>                    
@@ -294,7 +344,7 @@
 {{-- Testimonios start --}}
 <section id="testimonios" class="section_testimonios mb-3 py-4">
     <div class="container text-center py-4">
-        <h2 class="text-primary">Testimonios</h2>
+        <h2 class="text-primary line-primary"><span class="font-secondary">Nuestros estudiantes</span> nos recomiendan</h2>
     </div>
 
     <div class="container-fluid px-4">
@@ -321,8 +371,9 @@
                         </div>
                         <div class="col-8 name-profile">
                             <h4>
-                            Paúl Cajahuanca
-                            </h3>
+                            Ing. Paúl Cajahuanca
+                            </h4>                            
+                             Jefe de proyectos                            
                         </div>                        
                     </div>
                 </div>
@@ -350,8 +401,9 @@
                         </div>
                         <div class="col-8 name-profile">
                             <h4>
-                            Victor Silva
-                            </h3>
+                            Ing. Victor Silva
+                            </h4>
+                            Ing. de modelamiento
                         </div>                        
                     </div>
                 </div>
@@ -394,7 +446,7 @@
 {{-- Clientes start --}}
 <section id="clientes" class="section_clientes mb-3 py-4">
     <div class="container text-center py-4">
-        <h2 class="text-primary">Nuestros Clientes</h2>
+        <h2 class="text-primary line-primary"><span class="font-secondary">Nuestros</span> Clientes</h2>
     </div>
 
     <div class="container-fluid px-4 d-flex justify-content-center">
