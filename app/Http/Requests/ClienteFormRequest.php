@@ -24,12 +24,13 @@ class ClienteFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombres'=>'required|max:300',
+            'nombres'=>'required|max:500',
             //'apellidos'=>'required|max:300',
             'email'=>'required|email|max:150',
             // 'dni'=>'required|min:8|max:8',
             'celular'=>'required|min:9',
             'profesion'=>'required|max:150',
+            'empresa'=>'required|max:150',
             //'carrera'=>'required|max:300',
             //'campus'=>'required|max:300',
             //'egreso'=>'required|min:4|max:4',

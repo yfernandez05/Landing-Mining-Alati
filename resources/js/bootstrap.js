@@ -11,6 +11,13 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+
+    //import libreries
+    window.AOS = require('AOS');
+    AOS.init({
+        easing: 'ease-in-out-sine'
+    });
+    
 } catch (e) {}
 
 /**

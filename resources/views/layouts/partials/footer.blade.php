@@ -1,17 +1,15 @@
-<div class="container-fluid p-0">
+<!-- <div class="container-fluid p-0"> -->
     <footer class="bg-primary text-center text-lg-start text-white">
         <!-- Grid container -->
         <div class="container p-4">
-        <!--Grid row-->
             <div class="row mt-4 mb-0">
                 <!--Grid column-->
                 <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
 
-                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 80px; height: 80px;">
-                        <img src="{{asset('images/logo.png')}}" height="45" alt=""
+                    <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto p-2" style="width: 83px; height: 83px;">
+                        <img src="{{asset('images/logo.png')}}" height="35"  alt=""
                             loading="lazy" />
                     </div>
-
                     <p class="text-center">Especialistas en la formación de profesionales en Minería</p>
 
                     <ul class="list-unstyled d-flex flex-row justify-content-center">
@@ -51,13 +49,13 @@
 
                     <ul class="list-unstyled">
                         <li>
-                            <a href="https://wa.link/u14lou" target="_blank" class="text-light">
+                            <a href="https://wa.link/k2mj63" target="_blank" class="text-light">
                                 <p><i class="fa-brands fa-whatsapp pe-2">&nbsp;</i>+51 974742246</p>
                             </a>
                         </li>
                         <li>
                             <a href="tel:+5116476428" class="text-light">
-                                <p><i class="fa-brands fa-whatsapp pe-2">&nbsp;</i>5116476428</p>
+                                <p><i class="fa-solid fa-phone pe-2">&nbsp;</i>5116476428</p>
                             </a>
                         </li>
                         <li>
@@ -84,7 +82,6 @@
                 </div>
                 <!--Grid column-->
             </div>
-        <!--Grid row-->
         </div>
         <!-- Grid container -->
 
@@ -95,5 +92,5 @@
         </div>
         <!-- Copyright -->
     </footer>
-</div>
-<!-- End of .container -->
+<!-- </div> -->
+

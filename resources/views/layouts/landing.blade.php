@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
     <link rel="stylesheet" href="{{asset('css/app.css')}}" />
-    
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
     
     <title>Mining Alati</title>
   </head>
   <body>
+    @yield('css')
 
-    @include('layouts.partials.header')
+    {{-- @include('layouts.partials.header') --}}
 
     @yield('content')
 

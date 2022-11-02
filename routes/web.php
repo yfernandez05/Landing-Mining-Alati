@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 Route::resource('/', 'ClienteController')->only(['index', 'store'])->name('index','welcome');
+Route::view('/costos-y-presupuestos', 'costosypresupuestos')->name('costosypresupuestos');

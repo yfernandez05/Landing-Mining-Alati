@@ -106,7 +106,18 @@ section[id] {
         background-color: $primary;
     }
 }
-
+.hide{
+    display: none !important;
+}
+#error-msg, #valid-msg {
+    padding-top: 3px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.875em;    
+}
+#error-msg{
+    color: #e3342f;
+}
 .menufixed {
     //position: fixed;
     position: sticky;
@@ -159,6 +170,20 @@ section[id] {
 .navbar{
     z-index: 99;
     font-family: $font-family-primary;
+    .navbar-toggler{
+        color: $primary;
+        border-color: $primary;
+        .sandwitch_icon{
+            &::before{
+                //content: "\f00d";
+                font-size: initial;
+            }
+        }
+
+    }
+    
+    
+
     li a {
         position: relative;
         &::after{
@@ -192,6 +217,7 @@ section[id] {
         } 
     }
 }
+
 //navbar end
 
 
@@ -307,10 +333,45 @@ section[id] {
     }
     .img-icons{
         margin: auto;
+        img{
+            width: 65px;
+        }
     }
 }
 // quienes somos end
 
+
+//diplomado internacional
+.section_diplomado{
+    .cont-fils{
+        text-align: center;
+    }
+    .info_nosotros{
+        background-color: $gray;
+        color: white;
+    }
+    .long-text{
+        font-size: 20px;
+        font-family: $font-family-primary;
+        display: flex;
+        line-height: 1;
+    }
+    .card{
+        border: none;
+         
+        .card-header{
+            .title-header{
+                font-size: 16px;
+                box-shadow: none;
+                text-decoration: none;
+                .cont-icon{
+                    font-size: 0.70em;
+                }
+            }
+        } 
+
+    }
+}
 
 // cursos start
 .section_cursos{
@@ -359,18 +420,17 @@ section[id] {
             }
         }
     }
-
 }
 // cursos end
 
 
 // porque elegirnos start
 .section_porqueelegirnos{
-    .cont-degrade{
+    /* .cont-degrade{
         background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
         border-radius: 10px 10px 10px 10px;
         overflow: hidden;
-    }
+    } */
     .cont-icons{
         display: flex;
         flex-direction: column;
@@ -385,6 +445,8 @@ section[id] {
 
 //testimonios start
 .section_testimonios{
+    background-image: url(../images/bg-estructuras.png);
+    background-size: cover;
     .cont-profile{
         .name-profile{
             align-self: center;
@@ -480,6 +542,21 @@ section[id] {
             width: 65px;
         }
     }
+
+    .section_diplomado{        
+        .cont-fils{
+            display: flex;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px;
+            justify-content: center;
+            margin: 0;
+            text-align: left !important;
+        }
+        .long-text{
+            font-size: 30px !important;
+        }
+    }
     
     .section_cursos{
         .cont-fils{
@@ -487,7 +564,8 @@ section[id] {
             flex-wrap: wrap;
             margin-right: -15px;
             margin-left: -15px;
-            justify-content: space-evenly;
+            //justify-content: space-evenly;
+            justify-content: center;
         }
         .cont-img_cursos{
             .info-curso h2{
@@ -534,7 +612,13 @@ section[id] {
     .line-white::before, .line-primary::before{
         //bottom: -10px;
         height: 4px;
-    } 
+    }
+    .slick-next{
+        right: -15px !important;
+    }
+    .slick-prev{
+        left: -30px !important;
+    }
 
     .slider_home{
         .content_banner__home{
@@ -557,7 +641,7 @@ section[id] {
                 margin-left: -15px;
             }
         }  
-    }    
+    }   
 
     .cont-fils{
         display: flex;
@@ -580,7 +664,7 @@ section[id] {
         }
         .img-icons{
             img{
-                width: 65px;
+                width: 78px;
             }
         }
         .img-colum{
@@ -588,9 +672,33 @@ section[id] {
         }
     }
 
+    .section_diplomado{
+
+        .long-text{
+            font-size: 28px !important;
+        }
+        .cont-info{
+            align-self: center;
+        }   
+        .cont-fils{
+            text-align: left !important;
+        }
+        .card{            
+            .card-header{
+                .title-header{
+                    font-size: 18px;
+                    box-shadow: none;
+                    text-decoration: none;
+                }
+            } 
+        }
+        
+    }
+
     .section_cursos{
         .cont-fils{
-            justify-content: space-evenly;
+            //justify-content: space-evenly;
+            justify-content: center;
         }
         .cont-img_cursos{
             //max-width: 95%;
@@ -602,7 +710,7 @@ section[id] {
 
     .section_porqueelegirnos{
         .icon-img{
-            width: 80px;
+            width: 80px !important;
         }
     }    
 }
