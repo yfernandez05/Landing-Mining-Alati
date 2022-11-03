@@ -54,16 +54,16 @@
 
             <div class="form-group col-12">
                 <input type="tel" class="form-control @error('celular') is-invalid @enderror"
-                    name="celular" id="celular" value="{{ old('celular') }}" >
-
-                <span id="valid-msg" class="hide text-success">✓ Valido</span>
-                <span id="error-msg" class="hide text"></span>    
+                    name="celular" id="celular">
                 <span class="invalid-feedback" id="celularError" role="alert"></span>
-                    @error('celular')
-                <span class="invalid-feedback" role="alert">
+                @error('celular')
+                <span class="invalid-feedback cel-alert-erro" role="alert" id="cel-alert-erro">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
+                <span id="valid-msg" class="hide text-success">✓ Valido</span>
+                <span id="error-msg" class="hide text"></span>                    
+                
                 
 
                 <!-- <input type="tel" id="celular" placeholder="">
@@ -73,8 +73,9 @@
             </div>                                
 
             <div class="form-group col-12">
-                <input type="text" class="form-control @error('profesion') is-invalid @enderror" name="profesion" 
+                <input type="text" class="form-control @error('profesion') is-invalid @enderror" name="profesion" id="profesion" 
                         value="{{ old('profesion') }}" placeholder="Profesión*">
+                <span class="invalid-feedback" id="profesionError" role="alert"></span>
                 @error('profesion')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -83,8 +84,9 @@
             </div> 
 
             <div class="form-group col-12">
-                <input type="text" class="form-control @error('empresa') is-invalid @enderror" name="empresa" 
+                <input type="text" class="form-control @error('empresa') is-invalid @enderror" name="empresa" id="empresa"
                         value="{{ old('empresa') }}" placeholder="Empresa donde labora*">
+                <span class="invalid-feedback" id="empresaError" role="alert"></span>
                 @error('empresa')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -111,6 +113,7 @@
             </div>
         </div>
         <div class="form-group">
+            <!-- extras inputs aditionals -->
             <div class="form-group col-12">
                 <input name="utm_source" id="utm_source" class="d-none"></input>
                 <input name="utm_medium" id="utm_medium" class="d-none"></input>
@@ -118,10 +121,15 @@
                 <input name="utm_term" id="utm_term" class="d-none"></input>
                 <input name="utm_content" id="utm_content" class="d-none"></input>
                 <input name="procedencia" id="procedencia" class="d-none"></input>
+                <input name="origen" id="origen" class="d-none"></input>
+                <input name="carrera" id="inputCarrera" class="d-none"></input>
+                <input id="country" type="text" class="d-none" name="country">
             </div>
         </div>
-        <button class="btn btn-send_banner btn-secondary text-subtitulo btn-form mdc-elevation--z2">
+        <button class="btn btn-send_banner btn-secondary text-subtitulo btn-form mdc-elevation--z2" id="send-form">
             Registrarme
         </button>
     </form>
 </div>
+
+

@@ -11,18 +11,28 @@ class Cliente extends Model
     public $timestamps = false;
 
     protected $fillable = [
-            'nombres', 
-            'apellidos', 
+            'nombreapellido', 
+            //'apellidos', 
             'email', 
             'telefono', 
+            'pais',
+            'profesion',
+            'empresa',
+            'carrera',
             'dni', 
             'idcampania', 
             'fecharegistro', 
             'coddistrito', 
             'utm', 
+            'campaign_content',
+            'campaign_medium',
+            'campaign_name',
+            'campaign_source',
+            'campaign_term',
+            'procedencia', 
             'carrera', 
-            'colegio', 
-            'anioegreso', 
+            //'colegio', 
+            //'anioegreso', 
             'estado', 
     ];
 

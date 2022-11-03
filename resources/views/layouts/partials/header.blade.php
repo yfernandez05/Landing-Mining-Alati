@@ -3,7 +3,7 @@
     <div class="container">
         <!-- Navbar brand -->
         <a class="navbar-brand me-2" href="{{route(Request::route()->getName())}}">
-        <img src="{{asset('images/logo.png')}}"
+            <img src="{{asset('images/logo.png')}}"
             height="50" alt="logo" loading="lazy" style="margin-top: -1px;"/>
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

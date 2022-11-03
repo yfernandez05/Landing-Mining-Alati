@@ -18,7 +18,7 @@
     <div class="container-fluid col-11 content_banner__home">
         <div class="row">
             <div class="col-12 col-md-7 col-lg-7 text-white text-info_banner">
-                <h3 data-aos="fade-right">CERTIFÍCATE CON LIDERES INTERNACIONALES EN CAPACITACIÓN MINERA</h3>
+                <h3 data-aos="fade-right" id="title-curso">CERTIFÍCATE CON LIDERES INTERNACIONALES EN CAPACITACIÓN MINERA</h3>
                 <!-- <p>El mercado laboral le solicita que se 
                     encuentre altamente capacitado con las 
                     últimas tecnologías de la información. 
@@ -196,23 +196,25 @@
                     <a href="#!" class="waves"></a>
                 </figure>                 
             </div>
+
             <div class="col-12 col-md-4 col-lg-3 curos_1" data-aos="fade-left" data-aos-duration="300">
                 <figure class="cont-img_cursos">
-                    <img src="{{asset('images/curso_6.png')}}" alt="Perforación y Voladura en Minería Subterránea" class="img">
+                    <img src="{{asset('images/curso_7.png')}}" alt="Ingeniería Geotécnica aplicada a la Minería" class="img">
                     <figcaption class="info-curso">
                         <h2>
-                        Perforación y Voladura en Minería Subterránea
+                        Ingeniería Geotécnica aplicada a la Minería
                         </h2>
                     </figcaption>
                     <a href="#!" class="waves"></a>
                 </figure>                 
             </div>
+
             <div class="col-12 col-md-4 col-lg-3 curos_1" data-aos="fade-right" data-aos-duration="300">
                 <figure class="cont-img_cursos">
-                    <img src="{{asset('images/curso_6.png')}}" alt="Perforación y Voladura en Minería Subterránea" class="img">
+                    <img src="{{asset('images/curso_8.png')}}" alt="Geomecánica en Minería Subterránea" class="img">
                     <figcaption class="info-curso">
                         <h2>
-                        Perforación y Voladura en Minería Subterránea
+                        Geomecánica en Minería Subterránea
                         </h2>
                     </figcaption>
                     <a href="#!" class="waves"></a>

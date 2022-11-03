@@ -229,4 +229,5 @@ return [
 
     ],
 
+    'campaign_code' => env('CAMPAIGN_CODE',0),
 ];

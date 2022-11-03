@@ -7,13 +7,6 @@ const input = document.querySelector("#celular");
 var errorMsg = document.querySelector("#error-msg"),
 validMsg = document.querySelector("#valid-msg");
 
-/* intlTelInput(input, {
-  initialCountry:"pe",
-  separateDialCode: true,
-  onlyCountries:["pe","ec","mx","cl","bo","ar","co"],
-    // any initialisation options go here
-}); */
-
 var errorMap = ["Número invalido","Código de país inválido","Demasiado corto","Demasiado largo","Número invalido"];
 
 // initialise plugin
@@ -34,44 +27,37 @@ var reset = function() {
   validMsg.classList.add("hide");
 };
 
+//seleccionamos el boton del fomrulario
+let btnSendFrom = document.getElementById('send-form');
+let errorMessaje = document.getElementById('cel-alert-erro');
+
 // on blur: validate
 input.addEventListener('blur', function() {
   reset();
   if (input.value.trim()) {
     if (iti.isValidNumber()) {
       validMsg.classList.remove("hide");
+      btnSendFrom.disabled = false;
+      errorMessaje.style.display = "none";
     } else {
       input.classList.add("error");
       var errorCode = iti.getValidationError();
-      console.log(errorCode);
+      //console.log(errorCode);
       errorMsg.innerHTML = errorMap[errorCode];
       errorMsg.classList.remove("hide");
+      btnSendFrom.disabled = true;      
     }
   }
+});
+
+var iti = window.intlTelInputGlobals.getInstance(input);
+
+input.addEventListener('input', function() { 
+  var countryName = iti.getSelectedCountryData().name;
+  document.getElementById('country').value = countryName;
 });
 
 // on keyup / change flag: reset
 input.addEventListener('change', reset);
 input.addEventListener('keyup', reset);
 
-// telefono prefijos 
-/* var input = document.querySelector("#celular"),
-errorMsg = document.querySelector("#error-msg"),
-validMsg = document.querySelector("#valid-msg"); */
-
-/* intlTelInput(input, {
-  initialCountry: "pe",   
-  //separateDialCode: true,
-  //customContainer: "col-md-12 no-padding intelinput-styles",
-}); */
-
-
-/* const input = document.querySelector("#celular");
-intlTelInput(input, {
-  initialCountry:"pe",
-  separateDialCode: true,
-  onlyCountries:["pe","ec","mx","cl","bo","ar","co"],
-}); */
-/* intlTelInput(input,{
-;input.addEventListener('countrychange',function(e){$('#form__country').val(iti.getSelectedCountryData().iso2);});var errorMsg=document.querySelector("#error-msg"),validMsg=document.querySelector("#valid-msg");var errorMap=["Número invalido","Código de país inválido","Demasiado corto","Demasiado largo","Número invalido"];var reset=function(){input.classList.remove("error");errorMsg.innerHTML="";errorMsg.classList.add("hide");validMsg.classList.add("hide");};input.addEventListener('blur',function(){reset();if(input.value.trim()){if(iti.isValidNumber()){validMsg.classList.remove("hide");}else{input.classList.add("error");var errorCode=iti.getValidationError();errorMsg.innerHTML=errorMap[errorCode];console.log("errorCode => "+errorCode);errorMsg.classList.remove("hide");}}});input.addEventListener('change',reset);input.addEventListener('keyup',reset);}
-*/

@@ -1,11 +1,173 @@
 require('./bootstrap');
+require('jquery.numeric');
 import './utils/intTelInput';
 import './utils/slick';
 import './utils/wavesclick';
 
 $(document).ready(function(){   
     
-    //BACK-TOP
+    //capturar url y mostrarlo en un input UTM start
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i=0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if(pair[0] == variable) {
+                return pair[1];
+            }
+        }
+        let nulo=""
+        return nulo;
+    }
+    //console.log(window.location)
+    //console.log(window.location.href);
+    let baseOrigen = window.location.origin+'/';
+    let textCurso = document.getElementById('title-curso').innerHTML;
+    let valor_origen, carreraname;
+
+    baseOrigen === window.location.href ? valor_origen = 'Pagina General' : valor_origen = window.location.href;
+    baseOrigen === window.location.href ? carreraname = 'Curso General' :  carreraname = textCurso;
+    
+    document.fomr1.utm_source.value = getQueryVariable('utm_source');
+    document.fomr1.utm_medium.value = getQueryVariable('utm_medium');
+    document.fomr1.utm_campaign.value = getQueryVariable('utm_campaign');
+    document.fomr1.utm_term.value = getQueryVariable('utm_term');
+    document.fomr1.utm_content.value = getQueryVariable('utm_content');
+    document.fomr1.origen.value = valor_origen;
+    document.fomr1.inputCarrera.value = carreraname;
+    
+    let source = document.getElementById("utm_source").value,
+        medium = document.getElementById("utm_medium").value,
+        campaign = document.getElementById("utm_campaign").value,
+        term = document.getElementById("utm_term").value,
+        content = document.getElementById("utm_content").value,
+        procedencia = document.getElementById("procedencia");
+
+    if((source.length == 0) && (medium.length == 0) && (campaign.length == 0) && (term.length == 0) && (content.length == 0)){
+        procedencia.value = "Orgánico";
+    } else{
+        procedencia.value = "Pauta";
+    }
+
+
+
+    //show loader and validation formulario
+    let frmCliente = $('#frmCliente'),
+        loading = $('#loading'),
+        emailError = $('#emailError'),
+        nombresError = $('#nombresError'),
+        apellidosError = $('#apellidosError'),
+        profesionError = $('#profesionError'),
+        empresaError = $('#empresaError');
+        loading.removeClass('show');
+
+    frmCliente.on('submit', function(){
+        loading.addClass('show');
+    });
+
+    if(frmCliente){
+        $('#celular').numeric(
+            {negative: false},
+            function () {
+                this.value = '';
+                this.focus();
+            }
+        );
+
+        $('#celular').blur(function(){
+            var currentElement = $(this);
+            var valCelular = currentElement.val().trim();
+            //console.log(currentElement);
+            if(valCelular.length) {
+                //if(empresaError) empresaError.text('')
+                currentElement.removeClass('is-invalid');
+                return;
+            }
+        });
+
+        $("#email").blur(function(){
+            var regexEmail = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            var currentElement = $(this);
+            var valEmail = currentElement.val().trim();
+            
+            if(!valEmail.length) {
+                if(emailError) emailError.text('')
+                currentElement.removeClass('is-invalid');
+                return;
+            }
+
+            if(!regexEmail.test(valEmail)) {
+                currentElement.addClass('is-invalid');
+                //currentElement.focus();
+                if(emailError) emailError.text('El campo email debe ser una dirección de correo válida.')
+            }else {
+                currentElement.removeClass('is-invalid');
+                if(emailError) emailError.text('')
+            }
+
+        });
+        
+        $("#nombres").blur(function(){
+            var regexLetters = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
+            var currentElement = $(this);
+            var valNombre = currentElement.val().trim();
+            
+            if(!valNombre.length) {
+                if(nombresError) nombresError.text('')
+                currentElement.removeClass('is-invalid');
+                return;
+            }
+
+            if(!regexLetters.test(valNombre)) {
+                currentElement.addClass('is-invalid');
+                if(nombresError) nombresError.text('El campo nombres solo puede contener letras.')
+            }else {
+                currentElement.removeClass('is-invalid');
+                if(nombresError) nombresError.text('')
+            }
+
+        });
+        
+        $("#profesion").blur(function(){
+            var regexLetters = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
+            var currentElement = $(this);
+            var valProfesion = currentElement.val().trim();
+            
+            if(valProfesion.length) {
+                if(profesionError) profesionError.text('')
+                currentElement.removeClass('is-invalid');
+                return;
+            }
+
+            /* if(!regexLetters.test(valApellido)) {
+                currentElement.addClass('is-invalid');
+                if(apellidosError) apellidosError.text('El campo apellidos solo puede contener letras.')
+            }else {
+                currentElement.removeClass('is-invalid');
+                if(apellidosError) apellidosError.text('')
+            } */
+
+        });
+
+        $("#empresa").blur(function(){
+            var regexLetters = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
+            var currentElement = $(this);
+            var valEmpresa = currentElement.val().trim();
+            
+            if(valEmpresa.length) {
+                if(empresaError) empresaError.text('')
+                currentElement.removeClass('is-invalid');
+                return;
+            }
+
+        });
+        
+    
+    }
+
+
+
+    //BACK-TOP start
     $(function(){
       $(window).scroll (function(){
         var scrolltop=$(this).scrollTop();
@@ -17,6 +179,7 @@ $(document).ready(function(){
 
       });
     });
+
 
 
     //CERRAR MENU AL DAR CLICK MOVIL
@@ -43,6 +206,7 @@ $(document).ready(function(){
         }
 
     });
+
   
 
     //ACTIVAR MENU FIXED
@@ -59,6 +223,7 @@ $(document).ready(function(){
         })
     }
 
+
     /* acordeon body chage icon close*/
     $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
         $(e.target)
@@ -67,5 +232,6 @@ $(document).ready(function(){
             .toggleClass("fa-minus fa-plus");
             //console.log(e.target);
     });
+
 
 });

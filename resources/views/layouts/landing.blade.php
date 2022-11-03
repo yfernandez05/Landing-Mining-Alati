@@ -7,9 +7,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
     
     <title>Mining Alati</title>
-  </head>
-  <body>
+
     @yield('css')
+
+    @yield('head')
+
+  </head>
+  <body>   
 
     {{-- @include('layouts.partials.header') --}}
 
@@ -19,6 +23,7 @@
 
     @include('layouts.partials.footer')
     @include('layouts.partials.utils.backtop')
+    @include('layouts.partials.utils.loading')
     
 
     <script src="{{asset('js/app.js')}}" ></script>

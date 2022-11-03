@@ -23,7 +23,7 @@
     <div class="container-fluid col-11 content_banner__home">
         <div class="row">
             <div class="col-12 col-md-7 col-lg-7 text-white text-info_banner">
-                <h3 data-aos="fade-right">COSTOS Y PRESUPUESTOS EN MINERÍA SUPERFICIAL Y SUBTERRÁNEA</h3>
+                <h3 data-aos="fade-right" id="title-curso">COSTOS Y PRESUPUESTOS EN MINERÍA SUPERFICIAL Y SUBTERRÁNEA</h3>
                 <!-- <p>El mercado laboral le solicita que se 
                     encuentre altamente capacitado con las 
                     últimas tecnologías de la información. 
@@ -289,10 +289,10 @@
 
             <div class="col-12 col-lg-12 curos_1" >
                 <figure class="cont-img_cursos">
-                    <img src="{{asset('images/curso_6.png')}}" alt="Perforación y Voladura en Minería Subterránea" class="img">
+                    <img src="{{asset('images/curso_7.png')}}" alt="Ingeniería Geotécnica aplicada a la Minería" class="img">
                     <figcaption class="info-curso">
                         <h2>
-                        Perforación y Voladura en Minería Subterránea
+                        Ingeniería Geotécnica aplicada a la Minería
                         </h2>
                     </figcaption>
                     <a href="#!" class="waves"></a>
@@ -301,10 +301,10 @@
 
             <div class="col-12 col-lg-12 curos_1" >
                 <figure class="cont-img_cursos">
-                    <img src="{{asset('images/curso_6.png')}}" alt="Perforación y Voladura en Minería Subterránea" class="img">
+                    <img src="{{asset('images/curso_8.png')}}" alt="Geomecánica en Minería Subterránea" class="img">
                     <figcaption class="info-curso">
                         <h2>
-                        Perforación y Voladura en Minería Subterránea
+                        Geomecánica en Minería Subterránea
                         </h2>
                     </figcaption>
                     <a href="#!" class="waves"></a>
