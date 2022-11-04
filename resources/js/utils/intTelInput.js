@@ -57,12 +57,12 @@ function saverarrayvalidate(){
     dataNumber.length ? cantidadrepetido = dataNumber[0].cantidadrepetido : cantidadrepetido = 0;
     dataNumber.length ? numerorepetido = dataNumber[0].numero : numerorepetido = 0;
     
-    if(numerorepetido <5 ){
+    if(cantidadrepetido <5 ){
         activeErroCel(false);
         validMsg.classList.remove("hide");
         btnSendFrom.disabled = false;
     }
-    console.log('num repetido ' ,numerorepetido, 'cantidad repetido ',cantidadrepetido);
+    //console.log('num repetido ' ,numerorepetido, 'cantidad repetido ',cantidadrepetido);
 }
 
 function activeErroCel(estado){
@@ -76,14 +76,16 @@ function activeErroCel(estado){
       if(celularError) celularError.text('');
       validMsg.classList.add("hide");
       btnSendFrom.disabled = false;
-      errorMessaje.style.display = "none";
+      if(errorMessaje)
+        errorMessaje.style.display = "none";
       return
   }
   $('#celular').addClass('is-invalid');
   //errorMsg.classList.add("hide");
   if(celularError) celularError.text('El campo celular debe ser un numero válido.');
   btnSendFrom.disabled = true; 
-  //errorMessaje.style.display = "block";
+  if(errorMessaje)
+    errorMessaje.style.display = "block";
 }
 
 
