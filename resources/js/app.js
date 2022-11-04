@@ -45,6 +45,7 @@ $(document).ready(function(){
 
     if((source.length == 0) && (medium.length == 0) && (campaign.length == 0) && (term.length == 0) && (content.length == 0)){
         procedencia.value = "Orgánico";
+        source = "Web";
     } else{
         procedencia.value = "Pauta";
     }
@@ -55,6 +56,7 @@ $(document).ready(function(){
     let frmCliente = $('#frmCliente'),
         loading = $('#loading'),
         emailError = $('#emailError'),
+        celularError = $('#celularError'),
         nombresError = $('#nombresError'),
         apellidosError = $('#apellidosError'),
         profesionError = $('#profesionError'),
@@ -74,16 +76,98 @@ $(document).ready(function(){
             }
         );
 
-        $('#celular').blur(function(){
+        /* $('#celular').blur(function(){
+            var regexCel = /^\[0-9]\{2}$/;
             var currentElement = $(this);
-            var valCelular = currentElement.val().trim();
+            var valCelular = currentElement.val().trim();            
             //console.log(currentElement);
+
+            //cantidadRepetido(valCelular);
+
             if(valCelular.length) {
                 //if(empresaError) empresaError.text('')
                 currentElement.removeClass('is-invalid');
                 return;
             }
-        });
+
+    
+
+        }); */
+        
+
+       /*  function activeErroCel(estado){
+            var errorMsg = document.querySelector("#error-msg"),
+                validMsg = document.querySelector("#valid-msg");
+           
+            
+
+            //console.log(estado);            
+            if(!estado){
+                $('#celular').removeClass('is-invalid');
+                if(celularError) celularError.text('');
+                validMsg.classList.add("hide");
+                return
+            }
+
+            $('#celular').addClass('is-invalid');
+            errorMsg.classList.add("hide");
+            if(celularError) celularError.text('El campo celular debe ser un numero válido.')
+        } */
+
+        //obtenemos repetidos y posiiones array
+        /* let repetidos = [], celularposition = [], contador = 0;
+
+        function cantidadRepetido(celular){
+            repetidos = [];
+            celularposition = [];
+            contador = 1;
+            let arr=[];
+    
+            arr = Array.from(celular);
+    
+            for (let index = 0; index < arr.length; index++) {
+                if(arr[index+1] === arr[index]){
+                    contador++;
+                }else{
+                    celularposition.push(arr[index]);
+                    //console.log(celularposition);
+                    repetidos.push(contador);
+                    //console.log(repetidos);
+                    contador = 1;
+                }                
+            }
+    
+            saverarrayvalidate();
+        } */
+
+        //calculamos l aposion de duplicados numeros
+        /* let dataNumber = [], cantidadrepetido = 0, numerorepetido = 0;
+
+        function saverarrayvalidate(){
+            dataNumber = [];
+    
+            for(let j = 0; j< celularposition.length; j++){
+                //console.log("El valor : " + celularposition[j] + " se repite " +repetidos[j] );
+                if(repetidos[j] >=5){
+                    activeErroCel(true);
+                    dataNumber.push( {'numero':celularposition[j],'cantidadrepetido': repetidos[j]});
+                }                
+                //console.log(dataNumber);
+            }
+            cantidadrepetido = 0,numerorepetido = 0;
+            dataNumber.length ? cantidadrepetido = dataNumber[0].cantidadrepetido : cantidadrepetido = 0;
+            dataNumber.length ? numerorepetido = dataNumber[0].numero : numerorepetido = 0;
+            
+            if(numerorepetido <5 ){
+                activeErroCel(false);
+            }
+            console.log('num repetido ' ,numerorepetido, 'cantidad repetido ',cantidadrepetido);
+        } */
+
+        
+        
+
+
 
         $("#email").blur(function(){
             var regexEmail = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;

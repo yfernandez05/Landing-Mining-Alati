@@ -76,7 +76,6 @@ body .slick-prev:before, body .slick-next:before{
 
     }
 }
-
 section[id] {
     scroll-margin-top: 270px;
 }
@@ -84,11 +83,9 @@ section[id] {
     width: 100%;
   display: block;
 }
-
 .cel-alert-erro{
     display: block;
 }
-
 .line-white, .line-primary{
     position: relative;
     &::before{
@@ -235,7 +232,6 @@ section[id] {
         } 
     }
 }
-
 //navbar end
 
 
@@ -359,7 +355,7 @@ section[id] {
 // quienes somos end
 
 
-//diplomado internacional
+//diplomado internacional start
 .section_diplomado{
     .cont-fils{
         text-align: center;
@@ -390,6 +386,33 @@ section[id] {
 
     }
 }
+//diplomado internacional end
+
+
+.section_software{
+    background-image: url(../images/bg-software_1.png);
+    background-size: cover;
+    .cont-software{
+        .img-people{
+            img{
+                filter: drop-shadow(-6px 9px 7px rgba(25, 25, 27, 0.6803921569));
+            }
+        }
+        .cont_info{
+            display: flex;
+            align-items: center;
+            .cont-icon-text{
+                border-radius: 5rem;
+                animation: bounce-top 2s ease-in-out infinite alternate both;                
+                .icon-soft,.text-soft{
+                    align-self: center;
+                }
+            }
+        }
+        
+    }
+}
+
 
 // cursos start
 .section_cursos{
@@ -607,6 +630,28 @@ section[id] {
         
     }
 
+    .section_software{
+        .cont-software{
+            .img-people{
+                &::before{
+                    background-image: url(../images/line_software.png);
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background-size: 150px;
+                    bottom: -3rem;
+                    background-repeat: no-repeat;
+                    right: -9.5rem;
+                    transform: rotate(34deg);
+                }
+            }
+            .cont_info{
+                justify-content: center;
+            }
+        }    
+    }
+
     
 }
 
@@ -713,6 +758,28 @@ section[id] {
         
     }
 
+    .section_software{
+        .cont-software{
+            .img-people{
+                &::before{
+                    background-image: url(../images/line_software.png);
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    background-size: 250px;
+                    bottom: -5rem;
+                    background-repeat: no-repeat;
+                    right: -14.5rem;
+                    transform: rotate(38deg);
+                }
+            }
+            .cont_info{
+                justify-content: center;
+            }
+        }    
+    }
+
     .section_cursos{
         .cont-fils{
             //justify-content: space-evenly;
@@ -733,5 +800,58 @@ section[id] {
     }    
 }
 
+  
 
-
+/*key frames*/
+  @keyframes bounce-top {
+    0% {
+      -webkit-transform: translateY(-24px);
+              transform: translateY(-24px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+      opacity: 1;
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      -webkit-transform: translateY(-18px);
+              transform: translateY(-18px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    65% {
+      -webkit-transform: translateY(-12px);
+              transform: translateY(-12px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    82% {
+      -webkit-transform: translateY(-6px);
+              transform: translateY(-6px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    93% {
+      -webkit-transform: translateY(4px);
+              transform: translateY(-4px);
+      -webkit-animation-timing-function: ease-in;
+              animation-timing-function: ease-in;
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+    }
+    100% {
+      -webkit-transform: translateY(0px);
+              transform: translateY(0px);
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }

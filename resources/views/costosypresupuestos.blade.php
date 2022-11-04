@@ -1,7 +1,6 @@
 @extends('layouts.landing')
 
 
-
 @section('css')
     <style>
         .slider_home{
@@ -9,6 +8,7 @@
         }
     </style>
 @endsection
+
 
 @section('content')
 
@@ -88,17 +88,9 @@
                                 <div id="collapseOne" class="collapse show" aria-labelledby="one_card" data-parent="#accordion">
                                     <div class="card-body text-primary px-3">
                                         <p>
-                                        Al finalizar el Diplomado en Perforación y Voladura
-                                        en Minería Subterránea, el participante estará en
-                                        capacidad de ejecutar un óptimo uso de los
-                                        explosivos en conjunto, con un diseño de malla
-                                        adecuado que permita realizar una voladura con
-                                        el menor costo; considerando la seguridad como
-                                        medida primordial. Asimismo, hará un correcto
-                                        uso de los softwares e interpretará los resultados
-                                        de manera óptima para tomar decisiones rápidas
-                                        y eficientes que conlleven a maximizar la
-                                        productividad de explotación de la mina.
+                                        El participante contará con herramientas para visualizar el panorama integral de la optimización de costos dentro de la industria minera. 
+                                        Asimismo, potenciará su criterio sobre los costos de producción en cada etapa del ciclo de vida del proyecto, desde la exploración, desarrollo, operación, hasta el cierre y post cierre. 
+                                        Desarrollará habilidades para identificar procesos improductivos y corregirlos y podrá tomar decisiones que generen valor a la empresa, haciéndolo competitiva y productiva.
                                         </p>
                                     </div>
                                 </div>
@@ -119,12 +111,10 @@
                                 <div id="collapse_two" class="collapse" aria-labelledby="two_card" data-parent="#accordion">
                                     <div class="card-body text-primary px-3">
                                         <p>
-                                        Ingenieros de minas, técnicos, consultores y
-                                        profesionales relacionados. En general, profesionales
-                                        interesados en perfeccionar conocimientos para
-                                        ejecutar, controlar y supervisar procesos de
-                                        perforación y voladura en la actividad minera
-                                        subterránea.
+                                        Profesionales del sector minero que laboran en áreas de producción, planeamiento de minado, 
+                                        procesos, geología, entre otros, además a consultores y especialistas en minería. 
+                                        Así también, a aquellos profesionales interesados en profundizar sus conocimientos en este 
+                                        aspecto crítico de la industria minera.
                                         </p>
                                     </div>
                                 </div>
@@ -141,12 +131,12 @@
 {{-- Diplomado internacional end --}}
 
 
-{{-- Metodlogia --}}
-<section id="metodologia" class="section_porqueelegirnos bg-white mb-3 py-4">
+{{-- Metodlogia start--}}
+<section id="metodologia" class="section_porqueelegirnos bg-white mb-0 py-4">
     <div class="container text-center py-4">
         <h2 class="text-primary line-primary"><span class="font-secondary">Nuestra</span> metodología</h2>
     </div>
-    <div class="container-fluid px-4 px-md-5" data-aos="fade-up" data-aos-duration="550">
+    <div class="container-fluid px-4 mb-3 px-md-5" data-aos="fade-up" data-aos-duration="550">
         <div class="col-12 cont-fils cont-degrade mb-4">
 
             <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
@@ -154,8 +144,8 @@
                     <img src="{{asset('images/icon_modalidad.png')}}" alt="Modalidad mixta" class="img">
                 </div>                    
                 <h3 class="text-primary text-center">Modalidad mixta</h3>
-                <p class="text-primary text-center">140 horas de capacitación asincrónica.</p>
-                <p class="text-primary text-center">+ 20 horas de capacitación Online (en vivo con el docente).</p>
+                <p class="text-primary text-center">Capacitación asincrónica.<br>
+                    +20 horas de capacitación online (en vivo con el docente).</p>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
@@ -163,8 +153,8 @@
                     <img src="{{asset('images/icon_foro.png')}}" alt="Foro virtual" class="img">
                 </div>                    
                 <h3 class="text-primary text-center">Foro virtual</h3>
-                <p class="text-primary text-center">Interactúa con los docentes.</p>
-                <p class="text-primary text-center">Intercambia información con otros profesionales de Latinoamérica.</p>
+                <p class="text-primary text-center">Interactúa con los docentes.<br>
+                Intercambia información con otros profesionales de Latinoamérica.</p>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
@@ -172,13 +162,42 @@
                     <img src="{{asset('images/icon_software.png')}}" alt="Software" class="img">
                 </div>                    
                 <h3 class="text-primary text-center">Software</h3>
-                <p class="text-primary text-center">I BLAST*</p>
+                <p class="text-primary text-center">Aprenderás el manejo y potenciarás la interpretación de los resultados para tomar decisiones rápidas y eficientes en tu gestión</p>
             </div>
 
         </div>
     </div>
 </section>
-{{-- Metodlogia --}}
+{{-- Metodlogia end--}}
+
+
+{{-- Software start --}}
+<section id="software" class="section_software bg-secondary py-4">
+    <div class="container text-center py-4">
+        <h2 class="text-primary line-primary"><span class="font-secondary">Software a</span> tu medida</h2>
+    </div>
+    <div class="container cont-software mb-3" style=" overflow: hidden;">
+        <div class="row">
+            <div class="col-6 d-flex justify-content-center" data-aos="fade-zoom-in" data-aos-duration="550">
+                <div class="img-people pb-3 col-12 col-md-7">
+                    <img src="{{asset('images/software_people_1.png')}}" alt="Software a tu medida" class="img" >
+                </div>  
+            </div>
+            <div class="col-6 pl-1 pr-0 cont_info pb-5" data-aos="fade-left" data-aos-duration="550">
+                <div class="col-12 col-md-6 cont-icon-text bg-primary row py-1 px-1">
+                    <div class="col p-0 icon-soft">
+                        <img src="{{asset('images/icono_software_1.png')}}" alt="Software">
+                    </div>
+                    <div class="col-10 text-soft">
+                        <p class="text-white m-0">I BLAST*</p>    
+                    </div>
+                           
+                </div>
+            </div>
+        </div>        
+    </div>
+</section>
+{{-- Software end --}}
 
 
 {{-- Porque elegirnos start --}}
@@ -191,7 +210,7 @@
 
             <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
                 <div class="icon-img pb-3">
-                    <img src="{{asset('images/icon_certificacion.png')}}" alt="+100k estudiantes de todo el mundo" class="img">
+                    <img src="{{asset('images/icon_certificacion.png')}}" alt="Certificación internacional" class="img">
                 </div>                    
                 <h3 class="text-white text-center">Certificación internacional.</h3>
                 <p class="text-white text-center">Recibirás el Diploma, certificado de estudios y constancia de notas emitidos por Mining Alati.</p>
@@ -199,7 +218,7 @@
 
             <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
                 <div class="icon-img pb-3">
-                    <img src="{{asset('images/icon_accesomulti.png')}}" alt="+100k estudiantes de todo el mundo" class="img">
+                    <img src="{{asset('images/icon_accesomulti.png')}}" alt="Acceso continuo y multidispositivo." class="img">
                 </div>                    
                 <h3 class="text-white text-center">Acceso continuo y multidispositivo.</h3>
                 <p class="text-white text-center">Podrás acceder las 24 horas del día al Campus Virtual, desde cualquier móvil, pc, tablet, etc.</p>
@@ -207,7 +226,7 @@
 
             <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
                 <div class="icon-img pb-3">
-                    <img src="{{asset('images/icon_asesoriaacad.png')}}" alt="+100k estudiantes de todo el mundo" class="img">
+                    <img src="{{asset('images/icon_asesoriaacad.png')}}" alt="Asesoría académica." class="img">
                 </div>                    
                 <h3 class="text-white text-center">Asesoría académica.</h3>
                 <p class="text-white text-center">Acompañamiento constante para que inicies, desarrolles y culmines tu programa satisfactoriamente.</p>

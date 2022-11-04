@@ -55,7 +55,7 @@
             <div class="form-group col-12">
                 <input type="tel" class="form-control @error('celular') is-invalid @enderror"
                     name="celular" id="celular">
-                <span class="invalid-feedback" id="celularError" role="alert"></span>
+                <span class="invalid-feedback cel-alert-erro" id="celularError" role="alert"></span>
                 @error('celular')
                 <span class="invalid-feedback cel-alert-erro" role="alert" id="cel-alert-erro">
                     <strong>{{ $message }}</strong>

@@ -2,7 +2,8 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#01515b"/>   
     <link rel="stylesheet" href="{{asset('css/app.css')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
     
