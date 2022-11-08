@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}" />
     <link rel="icon" type="image/png" sizes="16x16" href="{{asset('images/favicon.png')}}">
     
-    <title>Mining Alati</title>
+    <title>Mining Alati | @yield('title')</title>
 
     @yield('css')
 

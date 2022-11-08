@@ -45,7 +45,9 @@ $(document).ready(function(){
 
     if((source.length == 0) && (medium.length == 0) && (campaign.length == 0) && (term.length == 0) && (content.length == 0)){
         procedencia.value = "Orgánico";
-        source = "Web";
+        if(document.fomr1){
+            document.getElementById('utm_source').value = 'Web';
+        }
     } else{
         procedencia.value = "Pauta";
     }

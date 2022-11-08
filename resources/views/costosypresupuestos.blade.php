@@ -1,3 +1,6 @@
+@section('title', 'Costos y Presupuestos en Minería Superficial y Subterránea')
+
+
 @extends('layouts.landing')
 
 
@@ -254,7 +257,7 @@
                         Planeamiento de Minado y Cálculo de Reservas
                         </h2>
                     </figcaption>
-                    <a href="#!" class="waves"></a>
+                    <a href="{{route('planeamientodeminado')}}" class="waves"></a>
                 </figure>                 
             </div>
 
@@ -266,7 +269,7 @@
                         Geoestadística Aplicada a la Estimación de Yacimientos Mineros
                         </h2>
                     </figcaption>
-                    <a href="#!" class="waves"></a>
+                    <a href="{{route('geoestadisticaaplicada')}}" class="waves"></a>
                 </figure>                 
             </div>
 
@@ -278,7 +281,7 @@
                         Plantas de procesamiento de minerales
                         </h2>
                     </figcaption>
-                    <a href="#!" class="waves"></a>
+                    <a href="{{route('plantasdeprocesamiento')}}" class="waves"></a>
                 </figure>                 
             </div>
 
@@ -290,7 +293,7 @@
                         Hidrogeología Minera Avanzada
                         </h2>
                     </figcaption>
-                    <a href="#!" class="waves"></a>
+                    <a href="{{route('hidrogeologiaminera')}}" class="waves"></a>
                 </figure>                 
             </div>
             
@@ -302,7 +305,7 @@
                         Perforación y Voladura en Minería Subterránea
                         </h2>
                     </figcaption>
-                    <a href="#!" class="waves"></a>
+                    <a href="{{route('perforacionyvoladura')}}" class="waves"></a>
                 </figure>                 
             </div>
 
@@ -314,7 +317,7 @@
                         Ingeniería Geotécnica aplicada a la Minería
                         </h2>
                     </figcaption>
-                    <a href="#!" class="waves"></a>
+                    <a href="{{route('ingenieriageotecnica')}}" class="waves"></a>
                 </figure>                 
             </div>
 
@@ -326,7 +329,7 @@
                         Geomecánica en Minería Subterránea
                         </h2>
                     </figcaption>
-                    <a href="#!" class="waves"></a>
+                    <a href="{{route('geomecanicaenmineria')}}" class="waves"></a>
                 </figure>                 
             </div>
 
