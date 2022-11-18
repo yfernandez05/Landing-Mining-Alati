@@ -1,11 +1,22 @@
-@extends('layouts.landing')
+@section('title', 'Planeamiento de Minado y Cálculo de Reservas')
 
+@extends('layouts.landing')
 
 @section('css')
     <style>
         .slider_home{
             background-image: url(../images/bg-planeamiento-minado.jpg);
         }
+        .img-people-medium::before{
+            width: 95%;
+            top: 7%;
+        }
+        @media only screen and (min-width: 980px){
+            .section_software .cont-software .con_info_medium .con-point:nth-child(2) {
+                margin-right: 9.5em;
+            }
+        }
+
     </style>
 @endsection
 
@@ -139,37 +150,7 @@
     <div class="container text-center py-4">
         <h2 class="text-primary line-primary"><span class="font-secondary">Nuestra</span> metodología</h2>
     </div>
-    <div class="container-fluid px-4 mb-3 px-md-5" data-aos="fade-up" data-aos-duration="550">
-        <div class="col-12 cont-fils cont-degrade mb-4">
-
-            <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
-                <div class="icon-img pb-3">
-                    <img src="{{asset('images/icon_modalidad.png')}}" alt="Modalidad mixta" class="img">
-                </div>                    
-                <h3 class="text-primary text-center">Modalidad mixta</h3>
-                <p class="text-primary text-center">Capacitación asincrónica.<br>
-                    +20 horas de capacitación online (en vivo con el docente).</p>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
-                <div class="icon-img pb-3">
-                    <img src="{{asset('images/icon_foro.png')}}" alt="Foro virtual" class="img">
-                </div>                    
-                <h3 class="text-primary text-center">Foro virtual</h3>
-                <p class="text-primary text-center">Interactúa con los docentes.<br>
-                Intercambia información con otros profesionales de Latinoamérica.</p>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
-                <div class="icon-img pb-3">
-                    <img src="{{asset('images/icon_software.png')}}" alt="Software" class="img">
-                </div>                    
-                <h3 class="text-primary text-center">Software</h3>
-                <p class="text-primary text-center">Aprenderás el manejo y potenciarás la interpretación de los resultados para tomar decisiones rápidas y eficientes en tu gestión</p>
-            </div>
-
-        </div>
-    </div>
+    @include('layouts.partials.utils.nuestrametodologia')
 </section>
 {{-- Metodlogia end--}}
 
@@ -181,21 +162,37 @@
     </div>
     <div class="container cont-software mb-3" style=" overflow: hidden;">
         <div class="row">
-            <div class="col-6 d-flex justify-content-center" data-aos="fade-zoom-in" data-aos-duration="550">
-                <div class="img-people pb-3 col-12 col-md-7">
+            <div class="col-12 col-lg-6 d-flex justify-content-center" data-aos="fade-zoom-in" data-aos-duration="550">
+                <div class="img-people-medium pb-3 col-6 col-md-4 col-lg-7">
                     <img src="{{asset('images/software_people_2.png')}}" alt="Software a tu medida" class="img" >
                 </div>  
             </div>
-            <div class="col-6 pl-1 pr-0 cont_info pb-5" data-aos="fade-left" data-aos-duration="550">
-                <div class="col-12 col-md-6 cont-icon-text bg-primary row py-1 px-1">
-                    <div class="col p-0 icon-soft">
-                        <img src="{{asset('images/icono_software_1.png')}}" alt="Software">
+            <div class="col-12 col-lg-6 pl-1 pr-0 con_info_medium pt-4 pt-lg-0 pb-5">
+
+                <div class="col-8 col-md-4 col-lg-6 pointer_1 con-point" data-aos-duration="550" data-aos-offset="400">
+                    <div class="cont-icon-text bg-primary row py-1 px-1 mb-3" data-aos="fade-left" >
+                        <div class="col p-0 icon-soft">
+                            <img src="{{asset('images/icono_software_1.png')}}" alt="Software">
+                        </div>
+                        <div class="col-10 text-soft">
+                            <p class="text-white m-0">GEMS</p>    
+                        </div>    
                     </div>
-                    <div class="col-10 text-soft">
-                        <p class="text-white m-0">GEMS, WHITTLE</p>    
-                    </div>
-                           
+                    
                 </div>
+                
+                <div class="col-8 col-md-4 col-lg-6 pointer_2 con-point" data-aos="fade-zoom-in" data-aos-offset="100">
+                    <div class="cont-icon-text bg-primary row py-1 px-1 mb-3 " >
+                        <div class="col p-0 icon-soft">
+                            <img src="{{asset('images/icono_software_2.png')}}" alt="Software">
+                        </div>
+                        <div class="col-10 text-soft">
+                            <p class="text-white m-0">WHITTLE</p>    
+                        </div>                    
+                    </div>
+                </div>
+                
+
             </div>
         </div>        
     </div>
@@ -208,35 +205,7 @@
     <div class="container text-center py-4">
         <h2 class="text-white line-white"><span class="font-secondary">¿Por qué</span> elegirnos?</h2>
     </div>
-    <div class="container-fluid px-4 px-md-5" data-aos="fade-up" data-aos-duration="550">
-        <div class="col-12 cont-fils cont-degrade mb-4">
-
-            <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
-                <div class="icon-img pb-3">
-                    <img src="{{asset('images/icon_certificacion.png')}}" alt="Certificación internacional" class="img">
-                </div>                    
-                <h3 class="text-white text-center">Certificación internacional.</h3>
-                <p class="text-white text-center">Recibirás el Diploma, certificado de estudios y constancia de notas emitidos por Mining Alati.</p>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
-                <div class="icon-img pb-3">
-                    <img src="{{asset('images/icon_accesomulti.png')}}" alt="Acceso continuo y multidispositivo." class="img">
-                </div>                    
-                <h3 class="text-white text-center">Acceso continuo y multidispositivo.</h3>
-                <p class="text-white text-center">Podrás acceder las 24 horas del día al Campus Virtual, desde cualquier móvil, pc, tablet, etc.</p>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 cont-icons py-3">
-                <div class="icon-img pb-3">
-                    <img src="{{asset('images/icon_asesoriaacad.png')}}" alt="Asesoría académica." class="img">
-                </div>                    
-                <h3 class="text-white text-center">Asesoría académica.</h3>
-                <p class="text-white text-center">Acompañamiento constante para que inicies, desarrolles y culmines tu programa satisfactoriamente.</p>
-            </div>
-
-        </div>
-    </div>
+    @include('layouts.partials.utils.porqueelegirnos')
 </section>
 {{-- Porque elegirnos end --}}
 

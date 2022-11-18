@@ -293,14 +293,17 @@
                         </p>
                     </div>
                     <div class="row cont-profile">
-                        <div class="col-4">
+                        <div class="col-4 ">
                             <img src="{{asset('images/profile_testimonio_1.png')}}" alt="testimonio de PAÚL CAJAHUANCA" class="img rounded-circle">
+                            <span class="cont-img country-peru position-relative"></span>
                         </div>
                         <div class="col-8 name-profile">
                             <h4>
-                            Ing. Paúl Cajahuanca
-                            </h4>                            
-                             Jefe de proyectos                            
+                            Paúl Cajahuanca
+                            </h4>                                                  
+                            Ingeniero de Minas
+                             <br> 
+                             <span class="text-primary">Glencore Zinc</span>                            
                         </div>                        
                     </div>
                 </div>
@@ -325,12 +328,15 @@
                     <div class="row cont-profile">
                         <div class="col-4">
                             <img src="{{asset('images/profile_testimonio_2.png')}}" alt="testimonio de Victor Silva" class="img rounded-circle">
+                            <span class="cont-img country-chile position-relative"></span>
                         </div>
                         <div class="col-8 name-profile">
                             <h4>
-                            Ing. Victor Silva
+                            Victor Silva
                             </h4>
-                            Ing. de modelamiento
+                            Ingeniero de Modelamiento
+                            <br> 
+                             <span class="text-primary">E-Mining Technology</span>
                         </div>                        
                     </div>
                 </div>
@@ -354,12 +360,15 @@
                     <div class="row cont-profile">
                         <div class="col-4">
                             <img src="{{asset('images/profile_testimonio_3.png')}}" alt="testimonio de Julian Alvares" class="img rounded-circle">
+                            <span class="cont-img country-mexico position-relative"></span>
                         </div>
                         <div class="col-8 name-profile">
                             <h4>
-                            Julian Alvares
+                            Julián Alvarez Navarro
                             </h4>
-                            Cliente
+                            Ingeniero Geotécnico
+                            <br> 
+                             <span class="text-primary">Torex Gold</span>
                         </div>                        
                     </div>
                 </div>

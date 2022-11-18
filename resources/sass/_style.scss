@@ -454,7 +454,7 @@ section[id] {
                 align-items: center;
             .cont-icon-text{
                 border-radius: 5rem;
-                animation: bounce-top 2s ease-in-out infinite alternate both;               
+                //animation: bounce-top 2s ease-in-out infinite alternate both;               
                 .icon-soft,.text-soft{
                     align-self: center;
                 }
@@ -540,9 +540,42 @@ section[id] {
     background-image: url(../images/bg-estructuras.png);
     background-size: cover;
     .cont-profile{
-        .name-profile{
-            align-self: center;
+        .cont-img{            
+            &::before{     
+                filter: drop-shadow(-2px 2px 2px gray);          
+                width: 30px;
+                height: 22px;
+                position: absolute;
+                background-size: contain;
+                content: "";
+                bottom: 0;
+                background-repeat: no-repeat;
+                background-position-x: right;
+                background-position-y: bottom;
+                /* left: calc(0px - -10px); */
+            }
         }
+
+        .country-peru{
+            &::before{
+                background-image: url(../images/logo_peru.png);
+            }            
+        }
+
+        .country-chile{
+            &::before{
+                background-image: url(../images/logo_chile.png);
+            }            
+        }
+
+        .country-mexico{
+            &::before{
+                background-image: url(../images/logo_mexico.png);
+            }            
+        }
+
+        
+
     }
 }
 //testimonios end
@@ -867,17 +900,17 @@ section[id] {
 
             .img-people-xlong{
                 &::before{
-                    background-image: url(../images/liena-xl-programa.png);
+                    background-image: url(../images/line_software.png);
                     content: "";
                     width: 100%;
-                    height: 35px;
+                    height: 100%;
                     position: absolute;
-                    background-size: 45%;
-                    top: 45%;
+                    background-size: 67%;
+                    top: 8rem;
                     background-repeat: no-repeat;
-                    right: -95%;
-                    //transform: rotate(9deg);
-                    z-index: -1;
+                    right: -89%;
+                    transform: rotate(21deg);
+                    z-index: 0;
                 }
             }
 
@@ -1051,17 +1084,17 @@ section[id] {
             }
 
             .con_info_xlong{
-                border: 3px dashed;
+                //border: 3px dashed;
                 border-color: black;
 
-                .pointer_2 .cont-icon-text,
+                /* .pointer_2 .cont-icon-text,
                 .pointer_3 .cont-icon-text,
                 .pointer_6 .cont-icon-text,
                 .pointer_7 .cont-icon-text,
                 .pointer_10 .cont-icon-text
                 .pointer_11 .cont-icon-text{
                         animation: bounce-top 2s ease-in-out infinite alternate .1s both;
-                }
+                } */
             }
 
         }    
@@ -1087,6 +1120,47 @@ section[id] {
     }    
 }
 
+
+//desktop xl icon  countrys testimonios
+@media screen and (min-width: 1450px) {
+    .section_testimonios{
+        .cont-profile{
+            .cont-img{
+                &::before{
+                    width: 42px;
+                    height: 30px;
+                    /* left: calc(0px - -10px); */
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1580px) {
+    .section_testimonios{
+        .cont-profile{
+            .cont-img{
+                &::before{
+                    width: 45px;
+                    height: 32px;
+                    /* left: calc(0px - -10px); */
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1800px){
+    .section_testimonios{
+        .cont-profile{
+            .cont-img{
+                &::before{
+                    width: 55px;
+                    height: 42px;
+                    /* left: calc(0px - -10px); */
+                }
+            }
+        }
+    }
+}
   
 
 /*key frames*/

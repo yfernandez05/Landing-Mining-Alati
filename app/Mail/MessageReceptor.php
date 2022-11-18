@@ -12,7 +12,7 @@ class MessageReceptor extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = 'Bienvenido a la #FeriaVirtualWiener';
+    public $subject = 'Nuevo registro landing #MiningAlati';
     public $cliente;
     /**
      * Create a new message instance.

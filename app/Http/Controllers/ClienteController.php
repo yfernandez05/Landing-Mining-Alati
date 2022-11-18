@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ClienteFormRequest;
+use App\Mail\MessageReceived;
 use App\Models\Cliente;
 use Exception;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class ClienteController extends Controller
 {
@@ -39,7 +41,7 @@ class ClienteController extends Controller
             $cliente->telefono = $request->input('celular');
             $cliente->profesion = $request->input('profesion');
             $cliente->empresa = $request->input('empresa');
-            $cliente->carrera = $request->input('carrera');
+            $cliente->programa = $request->input('carrera');
             $cliente->origen = $request->input('origen');
             $cliente->campaign_source = $request->input('utm_source');
             $cliente->campaign_medium = $request->input('utm_medium');
@@ -50,7 +52,7 @@ class ClienteController extends Controller
             // $cliente->terminos = $request->input('terminos');
             $cliente->save(); 
 
-            //Mail::to($cliente->email)->send(new MessageReceived($cliente));
+            Mail::to($cliente->email)->send(new MessageReceived($cliente));
             //Mail::to('feriavirtual@info.uwiener.edu.pe')->send(new MessageReceptor($cliente));
 
             DB::commit();

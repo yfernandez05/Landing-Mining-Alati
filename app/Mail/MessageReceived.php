@@ -12,7 +12,7 @@ class MessageReceived extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $subject = 'Bienvenido a la #FeriaVirtualWiener';
+    public $subject = 'Registro exitoso #MiningAlati';
     public $cliente;
     /**
      * Create a new message instance.
@@ -31,7 +31,7 @@ class MessageReceived extends Mailable
      */
     public function build()
     {
-        //return $this->bcc(['marleni.ingarojas@gmail.com','macuna@padin.com.pe','mrodriguezp@padin.com.pe'])->view('messagereceived');
+        //return $this->bcc(['coreo@gmail.com','macuna@padin.com.pe','mrodriguezp@padin.com.pe'])->view('messagereceived');
         // return $this->from('marketing@padin.com.pe',$nombrecliente->nombres)
         // // // ->subject('Correo de Contacto')
         // ->view('messagereceived');
