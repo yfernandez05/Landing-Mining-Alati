@@ -42931,10 +42931,11 @@ $(document).ready(function () {
   //console.log(window.location)
   //console.log(window.location.href);
   var baseOrigen = window.location.origin + '/';
-  var textCurso = document.getElementById('title-curso').innerHTML;
+  //let textCurso = document.getElementById('title-curso').innerHTML;
   var valor_origen, carreraname;
-  baseOrigen === window.location.href ? valor_origen = 'Pagina General' : valor_origen = window.location.href;
-  baseOrigen === window.location.href ? carreraname = 'Curso General' : carreraname = textCurso;
+  var textCurso = localStorage.getItem("textTituloSend");
+  baseOrigen === window.location.href ? valor_origen = 'Página General PEM' : valor_origen = window.location.href;
+  baseOrigen === window.location.href ? carreraname = 'No definido' : carreraname = textCurso;
   document.fomr1.utm_source.value = getQueryVariable('utm_source');
   document.fomr1.utm_medium.value = getQueryVariable('utm_medium');
   document.fomr1.utm_campaign.value = getQueryVariable('utm_campaign');
@@ -42963,6 +42964,7 @@ $(document).ready(function () {
     emailError = $('#emailError'),
     celularError = $('#celularError'),
     nombresError = $('#nombresError'),
+    cursosError = $('#cursosError'),
     apellidosError = $('#apellidosError'),
     profesionError = $('#profesionError'),
     empresaError = $('#empresaError');
@@ -43039,6 +43041,18 @@ $(document).ready(function () {
         if (empresaError) empresaError.text('');
         currentElement.removeClass('is-invalid');
         return;
+      }
+    });
+    $("#cursos").change(function () {
+      console.log($(this));
+      var currentElement = $(this);
+      var valCursos = currentElement.val();
+      if (valCursos === '') {
+        $("#cursosError").text('Por favor, seleccione un curso');
+        currentElement.addClass('is-invalid');
+      } else {
+        $("#cursosError").text('');
+        currentElement.removeClass('is-invalid');
       }
     });
   }
@@ -43389,12 +43403,12 @@ $('.porqueleegrinos-movil').slick({
 });
 
 //testimonios;
-$('.slider-testimonios').slick({
+$('.slider-expositores').slick({
   dots: true,
   infinite: false,
   speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
+  slidesToShow: 1,
+  slidesToScroll: 1,
   responsive: [{
     breakpoint: 1024,
     settings: {
@@ -43429,8 +43443,8 @@ $('.slider-clientes').slick({
   dots: true,
   infinite: false,
   speed: 300,
-  slidesToShow: 8,
-  slidesToScroll: 8,
+  slidesToShow: 7,
+  slidesToScroll: 7,
   responsive: [{
     breakpoint: 1024,
     settings: {
@@ -43460,8 +43474,8 @@ $('.slider-clientes').slick({
   ]
 });
 
-//internas cursos
-$('.internal-cursos').slick({
+//slider cursos destacados
+$('.slider-cursosdestacados').slick({
   dots: true,
   infinite: false,
   speed: 300,
@@ -43478,8 +43492,8 @@ $('.internal-cursos').slick({
   }, {
     breakpoint: 780,
     settings: {
-      slidesToShow: 4,
-      slidesToScroll: 4,
+      slidesToShow: 3,
+      slidesToScroll: 3,
       dots: true
     }
   }, {
@@ -43489,12 +43503,47 @@ $('.internal-cursos').slick({
       slidesToScroll: 1,
       dots: true
     }
-  }
-  // You can unslick at a given breakpoint now by adding:
-  // settings: "unslick"
-  // instead of a settings object
-  ]
+  }]
 });
+
+//internas cursos
+/* $('.internal-cursos').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 780,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+}) */
 
 /***/ }),
 

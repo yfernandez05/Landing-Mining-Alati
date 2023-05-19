@@ -22,11 +22,13 @@ $(document).ready(function(){
     //console.log(window.location)
     //console.log(window.location.href);
     let baseOrigen = window.location.origin+'/';
-    let textCurso = document.getElementById('title-curso').innerHTML;
+    //let textCurso = document.getElementById('title-curso').innerHTML;
     let valor_origen, carreraname;
 
-    baseOrigen === window.location.href ? valor_origen = 'Pagina General' : valor_origen = window.location.href;
-    baseOrigen === window.location.href ? carreraname = 'Curso General' :  carreraname = textCurso;
+    var textCurso = localStorage.getItem("textTituloSend");
+
+    baseOrigen === window.location.href ? valor_origen = 'Página General PEM' : valor_origen = window.location.href;
+    baseOrigen === window.location.href ? carreraname = 'No definido' :  carreraname = textCurso;
     
     document.fomr1.utm_source.value = getQueryVariable('utm_source');
     document.fomr1.utm_medium.value = getQueryVariable('utm_medium');
@@ -60,6 +62,7 @@ $(document).ready(function(){
         emailError = $('#emailError'),
         celularError = $('#celularError'),
         nombresError = $('#nombresError'),
+        cursosError = $('#cursosError'),
         apellidosError = $('#apellidosError'),
         profesionError = $('#profesionError'),
         empresaError = $('#empresaError');
@@ -152,7 +155,22 @@ $(document).ready(function(){
                 currentElement.removeClass('is-invalid');
                 return;
             }
-        });        
+        });
+
+        $("#cursos").change(function() {
+            console.log($(this));
+            var currentElement = $(this);
+            var valCursos = currentElement.val();
+          
+            if (valCursos === '') {
+              $("#cursosError").text('Por favor, seleccione un curso');
+              currentElement.addClass('is-invalid');
+            } else {
+              $("#cursosError").text('');
+              currentElement.removeClass('is-invalid');
+            }
+          });
+          
     
     }
 

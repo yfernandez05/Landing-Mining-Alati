@@ -15,7 +15,8 @@
   <!-- Container wrapper -->
     <div class="container">
         <!-- Navbar brand -->
-        <a class="navbar-brand me-2" href="{{route(Request::route()->getName())}}">
+        <!-- <a class="navbar-brand me-2" href="{{route('welcome')}}"> -->
+        <a class="navbar-brand me-2" href="https://miningalati.com/">
             <img src="{{asset('images/logo.png')}}"
             height="50" alt="logo" loading="lazy" style="margin-top: -1px;"/>
         </a>
@@ -47,18 +48,23 @@
                     <button class="nav-link dropdown-toggle text-dark bg-white border-0 m-auto" href="#" data-toggle="dropdown">VER MÁS PROGRAMAS</button>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <?php
-                            $items = [
+                            $defaultItems = [
+                                [
+                                    'submenuLabel' => 'PROGRAMA DE ESPECIALIZACIÓN MINERA - PEM',
+                                    'submenuUrl' => route('welcome'),
+                                ],
                                 [
                                     'submenuLabel' => 'CURSOS ESPECIALIZADOS - CE',
-                                    'submenuUrl' => route('planeamientominado'),
                                 ],
                                 [
                                     'submenuLabel' => 'PROGRAMAS A MEDIDA - PMED',
                                 ],
                             ];
+
+                            $itemsSubmenu = empty($itemsSubmenu) ? $defaultItems : $itemsSubmenu;
                         ?>
 
-                        @foreach($items as $item)
+                        @foreach($itemsSubmenu as $item)
                             @include('layouts.partials.item_sub_header', $item)
                         @endforeach
                     </ul>

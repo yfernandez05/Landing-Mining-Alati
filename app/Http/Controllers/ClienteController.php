@@ -16,6 +16,11 @@ use App\Http\Requests\ClienteFormRequest;
 
 class ClienteController extends Controller
 {
+    //producto / programa
+    const CODIGO_PRODUCTO_NODEFINIDO = 139;
+    const CODIGO_PROGRAMA_GENERAL = 6;
+    const CODIGO_PROGRAMA_PEM = 1;
+
     /**
      * Display a listing of the resource.
      *
@@ -37,42 +42,10 @@ class ClienteController extends Controller
          DB::beginTransaction();
          $result = null;
         try {
-            $carrerasenvio;
-            $codigocarrera;
-            $codigotipocarrera;
+
             $cliente = new Cliente();
-            $carrerasenvio =$cliente->programa = $request->input('carrera');
-            if($carrerasenvio=='Costos y Presupuestos en Minería Superficial y Subterránea'){
-                $codigocarrera=17;
-                $codigotipocarrera=1;
-            }else if($carrerasenvio=='Planeamiento de Minado y Cálculo de Reservas'){
-                $codigocarrera=18;
-                $codigotipocarrera=1;
-            }else if($carrerasenvio=='Geoestadística Aplicada a la Estimación de Yacimientos Mineros'){
-                $codigocarrera=108;
-                $codigotipocarrera=3;
-            }else if($carrerasenvio=='Plantas de Procesamiento de Minerales'){
-                $codigocarrera=11;
-                $codigotipocarrera=1;
-            }else if($carrerasenvio=='Hidrogeología Minera Avanzada'){
-                $codigocarrera=2;
-                $codigotipocarrera=1;
-            }else if($carrerasenvio=='Perforación y Voladura en Minería Subterránea'){
-                $codigocarrera=13;
-                $codigotipocarrera=1;
-            }else if($carrerasenvio=='Ingeniería Geotécnica aplicada a la Minería'){
-                $codigocarrera=6;
-                $codigotipocarrera=1;
-            }else if($carrerasenvio=='Geomecánica en Minería Subterránea'){
-                $codigocarrera=5;
-                $codigotipocarrera=1;
-            }else{
-                $codigocarrera=139;
-                $codigotipocarrera=6;
-            }
-
-
             $cliente->nombreapellido = $request->input('nombres');
+            //$cliente->cursos = $request->input('cursos', '');
             $cliente->email = $request->input('email');
             $cliente->pais = $request->input('country');
             //$cliente->telefono =  str_replace('+','',$request->input('full_number'));
@@ -80,8 +53,8 @@ class ClienteController extends Controller
             $cliente->telefono = $request->input('celular');
             $cliente->profesion = $request->input('profesion');
             $cliente->empresa = $request->input('empresa');
-            $cliente->idprograma =  $codigocarrera;
-            $cliente->idtipoprograma =  $codigotipocarrera;
+            $cliente->idprograma =  $request->input('codproducto');
+            $cliente->idtipoprograma = $request->input('codproducto') == self::CODIGO_PRODUCTO_NODEFINIDO ? self::CODIGO_PROGRAMA_GENERAL : self::CODIGO_PROGRAMA_PEM;
             $cliente->programa = $request->input('carrera');
             $cliente->origen = $request->input('origen');
             $cliente->procedencia = $request->input('procedencia');
@@ -92,6 +65,7 @@ class ClienteController extends Controller
             $cliente->campaign_content = $request->input('utm_content');
             $cliente->idcampania = config('app.campaign_code');
 
+            //return dd('datos: ',$cliente);
             $cliente->save();
 
             $respuestaSp = DB::select('CALL SP_OBTENER_USUARIO_MENOR_ATENCION ()');
@@ -112,7 +86,7 @@ class ClienteController extends Controller
                 $atencion->save();
             }
 
-            //Mail::to($cliente->email)->send(new MessageReceived($cliente));
+            Mail::to($cliente->email)->send(new MessageReceived($cliente));
             //Mail::to('feriavirtual@info.uwiener.edu.pe')->send(new MessageReceptor($cliente));
 
             DB::commit();
@@ -120,7 +94,7 @@ class ClienteController extends Controller
 
         } catch (QueryException $e) {
             DB::rollback();
-           dd($e);
+           //dd($e);
             $duplicateEntry = 1062; // registro duplicado
             $messageUser = "";
 
@@ -138,7 +112,7 @@ class ClienteController extends Controller
             return back()->withInput()->with($messageUser);
         } catch (Exception $e) {
             DB::rollback();
-           dd($e);
+           //dd($e);
             return back()->withInput()->with('failed', 'Ocurrió un error inesperado. Intente nuevamente más tarde.');
         }
     }

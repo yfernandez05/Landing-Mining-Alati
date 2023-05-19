@@ -27,6 +27,8 @@ class ClienteFormRequest extends FormRequest
             'nombres'=>'required|max:500|regex:/^[\pL\s\-]+$/u',
             //'apellidos'=>'required|max:300',
             'email'=>'required|email|max:150',
+            /* 'cursos' => 'required_if:curso_presente,true', */
+            'cursos' => 'sometimes|required',
             // 'dni'=>'required|min:8|max:8',
             'celular'=>'numeric|required|min:4',
             'profesion'=>'required|max:150|regex:/^[\pL\s\-]+$/u',

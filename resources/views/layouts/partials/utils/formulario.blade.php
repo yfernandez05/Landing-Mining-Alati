@@ -39,7 +39,27 @@
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
-            </div>                            
+            </div>
+
+            @php
+                $cursoIsActive = $cursoEstado ?? true;
+            @endphp
+            @if ($cursoIsActive)
+            <div class="form-group col-12">
+                <select class="form-control custom-select border border-primary @error('cursos') is-invalid @enderror" name="cursos" id="cursos">
+                    <option value="">Seleccione un curso</option>
+                    @foreach ($cursos as $cursoItem)
+                        <option value="{{ $cursoItem['nombre'] }}" @if(old('cursos') == $cursoItem['nombre']) selected @endif>{{ $cursoItem['nombre'] }}</option>
+                    @endforeach
+                </select>
+                <span class="invalid-feedback" id="cursosError" role="alert"></span>
+                @error('cursos')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>     
+            @endif                       
 
             <div class="form-group col-12">
                 <input type="email" class="form-control border border-primary @error('email') is-invalid @enderror"
@@ -124,6 +144,9 @@
                 <input name="origen" id="origen" class="d-none"></input>
                 <input name="carrera" id="inputCarrera" class="d-none"></input>
                 <input id="country" type="text" class="d-none" name="country">
+                @if(isset($codigoProducto))
+                    <input type="hidden" name="codproducto" value="{{ $codigoProducto }}">
+                @endif
             </div>
         </div>
         <button class="btn btn-send_banner btn-primary text-subtitulo btn-form mdc-elevation--z2 shadow " id="send-form">

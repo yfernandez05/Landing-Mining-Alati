@@ -32,12 +32,12 @@ $('.porqueleegrinos-movil').slick({
 
 
 //testimonios;
-$('.slider-testimonios').slick({
+$('.slider-expositores').slick({
     dots: true,
     infinite: false,
     speed: 300,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToShow: 1,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1024,
@@ -76,8 +76,8 @@ $('.slider-clientes').slick({
   dots: true,
   infinite: false,
   speed: 300,
-  slidesToShow: 8,
-  slidesToScroll: 8,
+  slidesToShow: 7,
+  slidesToScroll: 7,
   responsive: [
     {
       breakpoint: 1024,
@@ -110,9 +110,45 @@ $('.slider-clientes').slick({
   ]
 });
 
+//slider cursos destacados
+$('.slider-cursosdestacados').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 4,
+  slidesToScroll: 4,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 780,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true
+      }
+    }
+  ]
+});
+
 
 //internas cursos
-$('.internal-cursos').slick({
+/* $('.internal-cursos').slick({
   dots: true,
   infinite: false,
   speed: 300,
@@ -148,6 +184,6 @@ $('.internal-cursos').slick({
     // settings: "unslick"
     // instead of a settings object
   ]
-})
+}) */
 
 

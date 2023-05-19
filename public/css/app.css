@@ -19637,6 +19637,14 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f2f2f2;
 }
 
+.bg-orange {
+  background-color: #f18700;
+}
+
+.bg-celeste {
+  background-color: #ecf5f8;
+}
+
 .c-pointer {
   cursor: pointer;
 }
@@ -19891,6 +19899,19 @@ section[id] {
     text-align: center;
   }
 }
+.other-color .slider_home {
+  background-image: url(../images/bg-home-color2.jpg);
+}
+.other-color .section_profesionales .cont-info {
+  background-image: url(../images/bg-home-color2.jpg);
+}
+.other-color .section_profesionales .collapse-item[aria-expanded=true], .other-color .section_profesionales .collapse-item:hover {
+  background-color: #f18700;
+}
+.other-color .section_profesionales .border-primary {
+  border-color: #f18700 !important;
+}
+
 .slider_home {
   height: calc(100vh - 63px) !important;
   background-image: url(../images/bg-home.jpg);
@@ -19990,110 +20011,6 @@ section[id] {
   box-shadow: 0 0 0 0.2rem rgba(0, 140, 66, 0.2);
 }
 
-/* .section_diplomado{
-    .cont-fils{
-        text-align: center;
-    }
-    .info_nosotros{
-        background-color: $gray;
-        color: white;
-    }
-    .long-text{
-        font-size: 20px;
-        font-family: $font-family-primary;
-        display: flex;
-        line-height: 1;
-    }
-    .card{
-        border: none;
-
-        .card-header{
-            .title-header{
-                font-size: 16px;
-                box-shadow: none;
-                text-decoration: none;
-                .cont-icon{
-                    font-size: 0.70em;
-                }
-            }
-        } 
-
-    }
-} */
-/* .section_software{
-    background-image: url(../images/bg-software_1.png);
-    background-size: cover;
-    .cont-software{
-        .img-people,.img-people-log,.img-people-medium,.img-people-xlong{
-            img{
-                filter: drop-shadow(-6px 9px 7px rgba(25, 25, 27, 0.6803921569));
-            }
-        }
-        .img-people-log{
-            display: flex;
-            align-items: center;
-        }
-
-        .cont_info{
-            display: flex;
-            align-items: center;
-            .cont-icon-text{
-                border-radius: 5rem;
-                animation: bounce-top 2s ease-in-out infinite alternate both;               
-                .icon-soft,.text-soft{
-                    align-self: center;
-                }
-            }
-        }
-        .cont_info_long{
-            right:0;
-            display: flex;
-            flex-wrap: wrap;
-            padding: 20px;
-            color: #0000007d;
-            padding: 20px;
-            //border: 4px dashed;
-            justify-content: center;
-            .cont-icon-text{
-                border-radius: 5rem;
-
-                .icon-soft,.text-soft{
-                    align-self: center;
-                } 
-            }
-        }  
-
-        .con_info_medium{
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            justify-content: center;
-            .cont-icon-text{
-                border-radius: 5rem;
-                //animation: bounce-top 2s ease-in-out infinite alternate both;               
-                .icon-soft,.text-soft{
-                    align-self: center;
-                }
-            }
-        }
-
-        .con_info_xlong{
-                display: flex;
-                flex-wrap: wrap;
-                padding: 35px 20px 12px !important;
-                justify-content: center;
-                align-items: center;
-            .cont-icon-text{
-                border-radius: 5rem;
-                //animation: bounce-top 2s ease-in-out infinite alternate both;               
-                .icon-soft,.text-soft{
-                    align-self: center;
-                }
-            }
-        }
-
-    }
-} */
 .section_porqueelegirnos {
   /* .cont-degrade{
       background-image: linear-gradient(180deg,rgba(255,255,255,0.1) 0%,rgba(255,255,255,0) 100%);
@@ -20210,6 +20127,10 @@ section[id] {
   width: fit-content;
 }
 
+.section_expositores .slider-testimonios .slick-list.draggable {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
 .section_clientes .circle_profesionals-header {
   position: absolute;
   top: -3em;
@@ -20219,6 +20140,37 @@ section[id] {
 .section_clientes .cont-imgs {
   display: flex;
   justify-content: center;
+}
+
+.section_mediopago .points_mediopagos {
+  position: absolute;
+  right: 0;
+  width: 22rem;
+  top: 0px;
+}
+.section_mediopago .cont-info {
+  background-image: url(../images/bg-mediospagos.jpg);
+  width: 100%;
+  background-size: cover;
+  background-position: top;
+}
+.section_mediopago .cont-info .people-pagos {
+  position: absolute;
+  bottom: 0;
+}
+
+.section_cursosdestacado .slider-cursosdestacados .slick-slide div {
+  display: flex;
+  justify-content: center;
+}
+.section_cursosdestacado .curses-descatacados > div:first-child {
+  overflow: hidden;
+}
+.section_cursosdestacado .curses-descatacados img {
+  transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1);
+}
+.section_cursosdestacado .curses-descatacados:hover img {
+  transform: scale(1.2);
 }
 
 .footer {
@@ -20275,20 +20227,6 @@ section[id] {
   .slider_home .btn-send_banner {
     padding: 0.65rem 2.5rem !important;
   }
-  /* .section_diplomado{        
-      .cont-fils{
-          display: flex;
-          flex-wrap: wrap;
-          margin-right: -15px;
-          margin-left: -15px;
-          justify-content: center;
-          margin: 0;
-          text-align: left !important;
-      }
-      .long-text{
-          font-size: 30px !important;
-      }
-  } */
   .section_profesionales .circle_profesionals-header {
     left: 3rem;
     width: 10rem;
@@ -20310,35 +20248,11 @@ section[id] {
   .section_porqueelegirnos .cont-fils .cont-icons {
     text-align: center;
   }
-  /* .section_software{
-      .cont-software{
-          .img-people{
-              &::before{
-                  background-image: url(../images/line_software.png);
-                  content: "";
-                  width: 100%;
-                  height: 100%;
-                  position: absolute;
-                  background-size: 150px;
-                  bottom: -3rem;
-                  background-repeat: no-repeat;
-                  right: -9.5rem;
-                  transform: rotate(34deg);
-                  z-index: 0;
-              }
-          }
-          .cont_info{
-              justify-content: center;
-          }            
-          .cont_info_long,.con_info_medium, .con_info_xlong{
-              border: 4px dashed;
-              padding: 20px !important;
-              border-color: rgba(0, 0, 0, 0.4901960784);
-          }  
-      }    
-  } */
 }
 @media only screen and (min-width: 980px) {
+  .curses-descatacados .text-white {
+    height: 50%;
+  }
   h1 {
     font-size: 40px;
   }
@@ -20389,265 +20303,6 @@ section[id] {
     justify-content: center;
     margin: 0;
   }
-  /* .section_diplomado{
-
-      .long-text{
-          font-size: 28px !important;
-      }
-      .cont-info{
-          align-self: center;
-      }   
-      .cont-fils{
-          text-align: left !important;
-      }
-      .card{            
-          .card-header{
-              .title-header{
-                  font-size: 18px;
-                  box-shadow: none;
-                  text-decoration: none;
-              }
-          } 
-      }
-
-  } */
-  /* .section_software{
-      .cont-software{
-          .img-people{
-              &::before{
-                  background-image: url(../images/line_software.png);
-                  content: "";
-                  width: 100%;
-                  height: 100%;
-                  position: absolute;
-                  background-size: 250px;
-                  bottom: -5rem;
-                  background-repeat: no-repeat;
-                  right: -14.5rem;
-                  transform: rotate(38deg);
-                  z-index: 0;
-              }
-          }
-
-          .img-people-log{                
-              &::before{
-                  background-image: url(../images/line-programa-clear.png);
-                  content: "";
-                  width: 427px;
-                  height: 832px;
-                  position: absolute;
-                  background-size: 427px;
-                  bottom: -8rem;
-                  background-repeat: no-repeat;
-                  right: -106%;
-                  transform: rotate(22deg);
-                  z-index: 0;
-              }
-          }
-
-          .img-people-medium{                
-              &::before{
-                  background-image: url(../images/line_software.png);
-                  content: "";
-                  width: 100%;
-                  height: 100%;
-                  position: absolute;
-                  background-size: 100%;
-                  bottom: 0.5rem;
-                  background-repeat: no-repeat;
-                  right: -68%;
-                  transform: rotate(9deg);
-                  z-index: 0;
-              }
-          }
-
-          .img-people-xlong{
-              &::before{
-                  background-image: url(../images/line_software.png);
-                  content: "";
-                  width: 100%;
-                  height: 100%;
-                  position: absolute;
-                  background-size: 67%;
-                  top: 8rem;
-                  background-repeat: no-repeat;
-                  right: -89%;
-                  transform: rotate(21deg);
-                  z-index: 0;
-              }
-          }
-
-          .cont_info{
-              justify-content: center;
-          }
-
-          .cont_info_long{
-
-              display: grid;
-              justify-items: end;
-              right: 4em;
-              justify-content:initial;
-              justify-content:initial;
-              padding: auto !important;
-              //align-items: center;
-
-              .pointer_1,
-              .pointer_2,
-              .pointer_3,
-              .pointer_4,
-              .pointer_5,
-              .pointer_6,
-              .pointer_7,
-              .pointer_8{                    
-                  &::before{
-                      animation: pulse 2s infinite;
-                      background-image: url(../images/pointer-programa.png);
-                      content: '';
-                      width: 38px;
-                      height: 37px;
-                      background-repeat: no-repeat;
-                      position: absolute;   
-                      background-size: 38px;
-                      border-radius: 50%;
-                  }
-              }
-              .pointer_1{
-                  &::before{
-                      left: -2.5em;
-                  }
-              }
-              .pointer_2{
-                  &::before{
-                      left: -2.9em;
-                  }
-              }
-              .pointer_3{
-                  &::before{
-                      left: -3.6rem;
-                  }
-              }
-              .pointer_4{
-                  &::before{
-                      left: -3rem;
-                  }
-              }
-              .pointer_5{
-                  &::before{
-                      left: -3.3rem;
-                  }
-              }
-              .pointer_6{
-                  &::before{
-                      left: -3rem;
-                      top: -0.5em;
-                  }
-              }
-              .pointer_7{
-                  &::before{
-                      left: -2rem;
-                      top: -1.1em;
-                  }
-              }
-              .pointer_8{
-                  &::before{
-                      left: 0rem;
-                      top: -2.5em;
-                  }
-              }
-              .con-point{
-                  &:nth-child(1){
-                      margin-right: 1.8em;
-                  }
-                  &:nth-child(2){
-                      margin-right: 1.8em;
-                  }
-                  &:nth-child(3){
-                      margin-right: 2.8em;
-                  }
-                  &:nth-child(4){
-                      margin-right: 5em;
-                  }
-                  &:nth-child(5){
-                      margin-right: 8em;
-                  }
-                  &:nth-child(6){
-                      margin-right: 12em;
-                  }
-                  &:nth-child(7){
-                      margin-right: 20em;
-                  }
-                  &:nth-child(8){
-                      margin-right: 30em;
-                  }
-              }
-
-
-          }
-
-          .con_info_medium{
-              display: grid;
-              justify-items: center;
-              justify-content:initial;
-              justify-content:initial;
-              padding: auto !important;          
-
-              .con-point {                    
-                  &::before{
-                      animation: pulse 2s infinite;
-                      background-image: url(../images/pointer-programa.png);
-                      content: '';
-                      width: 38px;
-                      height: 37px;
-                      background-repeat: no-repeat;
-                      position: absolute;   
-                      background-size: 38px;
-                      border-radius: 50%;
-                  }
-
-                  &:nth-child(2){
-                      &::before {
-                          left: -27%;
-                      }
-                  }
-                  &:nth-child(3){
-                      &::before {
-                          left: -27%;
-                      }
-                  }
-
-              }
-              .con-point{
-                  &:nth-child(1){
-                      margin-right: 2.5em;
-                     .cont-icon-text{
-                          animation: bounce-top 2s ease-in-out infinite alternate both; 
-                      } 
-                  }
-                  &:nth-child(2){
-                      margin-right: 5.5em;
-                      .cont-icon-text{
-                          animation: bounce-top 2s ease-in-out infinite alternate 0.2s both; 
-                      } 
-                  }
-                  &:nth-child(3){
-                      margin-right: 18.5em;
-                      .cont-icon-text{
-                          animation: bounce-top 2s ease-in-out infinite alternate 0.6s both; 
-                      } 
-                  }
-              }
-
-          }
-
-          .con_info_xlong{
-              //border: 3px dashed;
-              border-color: black;
-
-
-          }
-
-      }    
-  } */
   .section_porqueelegirnos .icon-img {
     width: 80px !important;
   }

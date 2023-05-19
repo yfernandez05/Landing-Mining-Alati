@@ -18,6 +18,7 @@ class Cliente extends Model
             'pais',
             'profesion',
             'empresa',
+            //'cursos',
             'programa',
             'idprograma',
             'dni', 
